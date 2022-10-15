@@ -1,0 +1,142 @@
+html, body {
+    background-color: black;
+    padding: 0px;
+    margin: 0px;
+    min-height: 100vh;
+}
+
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.section-image {
+    background-image: url('./assets/preview.png');
+    height: 500px;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.section-image-top {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.section-image-top > a { 
+    text-decoration: none;
+    color:white;
+}
+
+.section-image-top > select { 
+    background-color: transparent;
+    border: 0px;
+    color:white;
+}
+
+.section-image-footer {
+    width: 100%;
+    text-align: center;
+    color: white;
+    bottom: 0px;
+    position: absolute;
+}
+.section-rows {
+    padding-left: 5px;
+}
+
+.section-row {
+    margin-top: 15px;
+}
+
+.section-row  span{
+    color: white;
+    font-size: 18px;
+}
+
+.section-imgs {
+    display: flex;
+    overflow: auto;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.section-imgs img{
+    border-radius: 5px;
+}
+
+footer {
+    width:100%;
+    position: fixed;
+    bottom: 0px;
+    display: flex;;
+    justify-content: center;
+    height: 50px;
+    background-color: black;
+    padding: 5px 0px 5px 0px;
+}
+
+footer > button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    background-color: transparent;
+    color: white;
+    border-color: black;
+    width:25%;
+    font-size: 10px;
+    gap: 5px;
+}
+
+footer > span {
+    padding-top: 5px;
+}
+
+footer > img {
+    width: 25;
+    height: 24;
+}
+
+.section-image-buttons {
+    width:100%;
+    display: flex;
+    justify-content:space-around;
+    gap: 10px;
+}
+
+
+
+.section-image-buttons  button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    background-color: transparent;
+    color: white;
+    border-color: transparent;
+    font-size: 10px;
+    width: 33.3%;
+    gap:8px;
+}
+
+.section-image-buttons  button.button-second {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: black;
+
+}
+
+.section-image-text { 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap:4px;
+}
+

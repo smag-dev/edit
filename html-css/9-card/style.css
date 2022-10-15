@@ -1,0 +1,83 @@
+@import url(‘https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,300;0,400;1,500&display=swap’);
+
+
+html, body {
+    font-family: ‘IBM Plex Sans’, sans-serif;
+    background: linear-gradient(90deg, rgb(201, 2, 2) 0%, rgb(121, 9, 52) 75%, rgb(38, 0, 255) 100%);
+}
+
+.card {
+    width:400px;
+    margin: 5px auto 0px auto;
+    background: red;
+    color: white;
+    border-radius: 10px;
+    border: 1px solid black;
+    overflow: hidden;
+}
+.card_header {
+    display: flex;
+    justify-content:space-between;
+    padding: 10px;
+}
+
+.card_content{
+    height: 350px;
+    padding: 0px 20px 20px 20px;
+    overflow: hidden;
+}
+
+.card_air {
+    text-align: center;
+    font-size: 16rem;
+    padding: 0px 0px;
+    left: -25px;
+    position: relative;
+    bottom: 30px;
+}
+.card_orange {
+    border-radius: 10px 0px 0px;
+    background: linear-gradient(to right top, #800202, #f1ba06);
+    overflow: hidden;
+}
+
+.card_image {
+    align-items: center;
+    position: absolute;
+    top: 200px;
+}
+
+.card_image img {
+   width: 400px;
+    height: 400px;
+}
+
+.card_footer {
+    padding: 20px 0px 10px 0px;
+    text-align: center;
+    background: white;
+    bottom: 0px;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.card_footer p {
+    text-align: center;
+    color: blueviolet;
+    margin: 0px;
+    background-color: white;
+    padding-top: 10px;
+}
+
+button {
+    padding: 5px 20px;
+    border-radius:  30px;
+    background: white;
+    border: 1px solid blueviolet;
+    color: blueviolet;
+}
+
+button:hover { 
+    background: blueviolet;
+    border: 1px solid blueviolet;
+    color: white;
+}

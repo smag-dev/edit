@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final HTML</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@100;400&display=swap');
+
+    html,
+    body {
+        margin: 0;
+        padding: 16px;
+        background-color: white;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        color: yellow;
+    }
+ </style>
+
+<body>
+    <!--  Mostra-me aqui as tuas páginas amarelas -->
+    <!-- Lembra-te que a semantica importa.
+        Cabeça, Tronco e Membros aka nav, main, section, etc...
+    -->
+    <nav>
+        <a href=""><img src="./assets/850.svg" alt=""></a>
+        <div class="nav_menu">
+            <div>
+                <a href="">Empresa</a>
+                <a href="">Serviços</a>
+                <a href="">Soluções</a>
+                <a href="">Blog</a>
+                <a href="">Contactos</a>
+            </div>
+            <button>Páginas Amarelas MarketPlace</button>
+        </div>
+    </nav>
+    <!--<div class="main"> -->
+        <section>
+            <h1>SOBRE NÓS </h1>
+            <div> <!-- pode-se remover-->
+                <p>Estamos no mercado há mais de sessenta anos e temos a experiência e o know-how necessários para
+                    desenvolver e implementar soluções que acrescem valor a qualquer empresa, independentemente do volume e
+                    da área de atividade. A nossa equipa de especialistas está focada no sucesso dos nossos clientes,
+                    ajudando-os a identificar oportunidades de negócio e a explorar todas as vertentes do marketing digital
+                    para que a estratégia online seja sólida e eficaz.</p>
+            </div>
+            <div>
+                <div>
+                    <h2>Missão</h2>
+                    <ul>
+                        <li>Democratizamos o marketing digital;</li>
+                        <li>Aproximamos Empresas e Consumidor,em todo o mundo;</li>
+                        <li>Formamos digital experts para serem referência no mercado.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Visão</h2>
+                    <ul>
+                        <li>Ser o melhor aliado das empresas na ampliação dos seus negócios;</li>
+                        <li>Ser top of mind na procura de serviços e produtos, acrescentando velocidade e valor;</li>
+                        <li>Ser a escola de Vendas & Marketing Digital em Portugal.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        
+        <section> <!-- pode ser um div-->
+            <h1>SERVIÇOS</h1>
+            <div>
+                <a href="">serviços</a>
+                <a href="">websites & addon</a>
+                <a href="">redes sociais</a>
+                <a href="">geo marketing</a>
+                <a href="">fotografia</a>
+                <a href="">video</a>
+                <a href="">identidade visual</a>
+                <a href="">office 365</a>
+                <a href="">marketplace</a>
+            </div>
+            <button >Saber mais sobre este serviço</button>
+        </section>
+    <!--</div> -->
+    <section>
+        <div>
+            <h1>CONTACTOS</h1>
+            <h3>Estamos aqui para ajudar, fale connosco! :)</h3>
+            <p>Ligue para <b>808 210 220</b>. Segunda a Sexta das 9h às 13h e das 14h às 18h.</p>
+            <p>Ou envie um e-mail para <a href="mailto:pa@paginasamarelas.pt">pa@paginasamarelas.pt</a></p>
+        </div>
+        <div>
+            <h3>Envie-nos uma mensagem:</h3>
+            <form>
+                <div>
+                    <input name="name" placeholder="Name*" required></input>
+                </div>
+                <div>
+                    <input name="telefone" placeholder="Telefone*" required></input>
+                </div>
+                <div>
+                    <input name="mail" placeholder="Mail*" required></input>
+                </div>
+                <div>
+                    <input name="nif" placeholder="NIF*" required></input>
+                </div>
+                <div>
+                    <select name="profissao">
+                        <option value="1">Carpinteiros</option>
+                        <option value="2">Seralheiros</option>
+                    </select>
+                </div>
+                <div>
+                    <textarea placeholder="Escreve aqui a sua mensagem" cols="30" rows="10"></textarea>
+                </div>
+                <div>
+                    <input type="checkbox">Quero receber comunicações da Páginas Amarelas</input>
+                </div>
+                <div>
+                    <input type="checkbox">Li e concordo com a Política de Privacidade da Páginas Amarelas</input>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+
+html {
+    font-family: 'Vollkorn', serif;
+    font-size: 14px;
+}
+
+.container {
+    margin: 0px auto;
+    width: 700px;;
+    text-align: justify;
+}
+
+.img-main {
+    background-image: url(https://miro.medium.com/max/700/1*FR9hzez9Ib3MTih_R5Bd3Q.jpeg);
+    width: 700px;
+    height: 408px;
+}
+
+.img-small {
+    background-image: url(https://miro.medium.com/fit/c/112/112/1*ktVD8n-IgmDkDhGoBt8rxw.jpeg);
+    width: 112px;
+    height: 111px
+}
+
+.nav_menu a {
+    padding: 12px 12px;
+    color: grey;
+}
+
+.nav_menu a:hover {
+    background-color: blue;
+    color: black;
+  }
+
+.nav_menu a:active {
+    background-color: black;
+}

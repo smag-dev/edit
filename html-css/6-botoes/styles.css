@@ -1,0 +1,61 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Graphik,-apple-system,system-ui,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.buttons__wrapper {
+    width: 500px;
+    margin: 16px auto;
+}
+
+.d-flex {
+    display: flex;
+    gap: 12px;
+}
+
+.btn{
+    background-color: gainsboro;
+    color: white;
+    border-color: gainsboro;
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin: 14px;
+}
+
+.btn-small {
+    padding: 10px 16px;
+}
+
+.btn-primary {
+    background-color: #1652F0;
+    border-color: #1652F0;
+    
+}
+
+.btn-success {
+    background-color: #14cf3c;
+    border-color: #14cf3c;
+}
+
+.btn-warning {
+    background-color: #dbac2b;
+    border-color: #dbac2b;
+}
+
+.btn-danger {
+    background-color: #cf1414;
+    border-color: #cf1414;
+}
+
+/*            <span>#1652F0 - primary</span>
+            <span>#14cf3c - success</span>
+            <span>#cf1414 - danger</span>
+            <span>#dbac2b - warning</span>
+            */
+ 
