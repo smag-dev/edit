@@ -1,0 +1,253 @@
+.module-summary {
+    padding: 15px 20px;
+
+    & .module-chart {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 36px;
+
+        width: 623px;
+        height: 339px;
+
+        flex: none;
+        order: 0;
+        align-self: stretch;
+        flex-grow: 0;
+    }
+
+    & .module-chart-heading {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px;
+        gap: 290px;
+
+        width: 623px;
+        height: 30px;
+
+        flex: none;
+        order: 0;
+        align-self: stretch;
+        flex-grow: 0;
+    }
+
+    & .module-chart-heading-frame {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0px;
+        gap: 21px;
+
+        width: 193px;
+        height: 30px;
+
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+
+        span {
+            width: 73px;
+            height: 19px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 19px;
+
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+        }
+    }
+
+    & .filter {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0px;
+        gap: 7px;
+        
+        width: 66px;
+        height: 15px;
+        
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+
+        span {
+            width: 66px;
+            height: 15px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+        }
+    }
+
+    & .icon {
+        width: 99px;
+        height: 30px;
+
+        background: rgba(85, 112, 241, 0.08);
+        border-radius: 8px;
+
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+    }
+
+    & .icon-frame {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0px;
+        gap: 20px;
+
+        position: relative;
+        width: 76px;
+        height: 20px;
+        left: 12px;
+        top: 5px;
+
+        span {
+            width: 36px;
+            height: 17px;
+    
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+    
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+        }
+    }
+
+    & .chevron-down{
+        width: 20px;
+        height: 20px;
+
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+    }
+}
+
+.module-chart-graph {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 45px;
+
+    width: 623px;
+    height: 273px;
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+
+
+    & .axis {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        padding: 0px;
+        gap: 37px;
+        
+        width: 25px;
+        height: 213px;
+
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+
+        span {
+            width: 25px;
+            height: 13px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 11px;
+            line-height: 13px;
+
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+        }
+    }
+}
+
+.module-chart-graph-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 19px;
+    
+    width: 40px;
+    height: 273px;
+    
+
+    &_bar {
+        width: 13px;
+        height: 241px;
+
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+        position: absolute;
+
+        &-rectangle1 {
+            position: absolute;
+            width: 13px;
+            height: 241px;
+            left: 13.5px;
+            top: 0px;
+
+            background: #EEF0FA;
+            border-radius: 50px;
+        }
+
+        &-rectangle2 {
+            position: absolute;
+            width: 13px;
+            height: 211px;
+            left: 13.5px;
+            top: 30px;
+
+            border-radius: 50px;
+        }
+    }
+
+    span {
+        width: 40px;
+        height: 13px;
+        
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 13px;
+        text-align: right;
+        
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+    }
+}

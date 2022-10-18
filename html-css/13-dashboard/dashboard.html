@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <aside class="sideBar">
+        <div class="sideBar-logo">
+            <img src="./assets/logo.png" alt="">
+            <span class="sideBar-logo-span">Matrix</span>
+        </div>
+        <div class="menuItems">
+            <div class="menuItem active bg-primary-100">
+                <img src="./assets/Iconly/Bulk/Category.png" alt="">
+                <p class="text-white">Dashboard</p>
+            </div>
+            <div class="menuItem">
+                <img src="./assets/Iconly/Light/Bag.png" alt="">
+                <p class="text-black-50">Orders</p>
+                <div class="menuItem-frame-ball bg-secondary-60">
+                    <span class="menuItem-frame-ball-span text-black-100">2</span>
+                </div>
+            </div>
+            <div class="menuItem">
+                <img src="./assets/Iconly/Light/2 User.png" alt="">
+                <p class="text-black-50">Customers</p>
+            </div>
+            <div class="menuItem">
+                <img src="./assets/Iconly/Light/Folder.png" alt="">
+                <p class="text-black-50">Inventory</p>
+            </div>
+            <div class="menuItem">
+                <img src="./assets/Iconly/Light/Chat.png" alt="">
+                <p class="text-black-50">Conversations</p>
+                <div class="menuItem-frame-ball bg-secondary-60">
+                    <span class="menuItem-frame-ball-span text-black-100">16</span>
+                </div>
+            </div>
+            <div class="menuItem">
+                <img src="./assets/Iconly/Light/Setting.png" alt="">
+                <p class="text-black-50">Settings</p>
+            </div>
+        </div>
+        <div class="logout">
+            <div class="logout-frame">
+                <img src="./assets/fi_headphones.png" alt="">
+                <p class="text-black-100">Contact Suport</p>
+            </div>
+        </div>
+        <div class="banner">
+            <div class="banner-container">
+                <div class="banner-container-frame-top">
+                    <img src="./assets/fi_gift.png" alt="">
+                    <p class="text-black-100">Free Gift Awaits You!</p>
+                </div>
+                <div class="banner-container-frame-bottom">
+                    <p class="text-black-40">Upgrade your account</p>
+                    <img src="./assets/fi_chevron-down.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="bottom-logout-left">
+                <div class="bottom-logout-left-frame">
+                    <img src="./assets/Iconly/Bulk/Logout.png" alt="">
+                    <p class="text-warning">Logout</p>
+                </div>
+            </div>
+            <div class="bottom-logout-right">
+                <div class="bottom-logout-right-frame">
+                    <img src="./assets/fi_headphones.png" alt="">
+                    <p class="text-black-100">Support</p>
+                </div>
+            </div>
+        </div>
+
+
+        
+
+    </aside>
+    <div class="main">
+        <div class="top-nav">
+            <div class="top-nav-topNav bg-white">
+                <div class="top-nav-topNav-navContainer">
+                    <span class="top-nav-topNav-navContainer-dashboard text-black-60">Dashboard</span>
+                    <div class="top-nav-topNav-navContainer-profile">
+                        <div class="top-nav-topNav-navContainer-profile-inconly">
+                            <img  src="./assets/Iconly/Bulk/Notification.png" alt="">
+                        </div>
+                        <img class ="top-nav-topNav-navContainer-profile-image" src="./assets/profile.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="top-nav-beadcumbs bg-white"></div>
+        </div>
+        <div class="container">
+            <!-- primeira linha-->
+            <div class="row">
+                <div class="col-4">
+                    <div class="module">
+                        <div class="module-container">
+                            <div class="module-container-top">
+                                <div class="module-container-top-icon">
+                                    <div class="module-container-top-icon-iconly">
+                                            <img  src="./assets/Iconly/Light/Graph.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="module-container-top-filter">
+                                    <span class="text-black-10">This weak</span>
+                                    <img class="module-container-top-image" src="" alt="">
+                                </div>
+                            </div>
+                            <div class="module-container-bottom">
+                                <div class="module-container-bottom-column module-flex-order-0">
+                                    <p class="module-flex-order-0 text-black-30"">Sales</p>
+                                    <div class="show_numbers module-flex-order-1">
+                                        <span class="col-one module-flex-order-0 text-black-60">₦0.00</span>
+                                        <span class="col-two module-flex-order-1 text-success">+0.00%</span>
+                                    </div>
+                                </div>
+                                <div class="module-container-bottom-column module-flex-order-1">
+                                    <p class="module-flex-order-0 text-black-30">Volume</p>
+                                    <div class="show_numbers  module-flex-order-1">
+                                        <span class="col-one module-flex-order-0 text-black-60">0</span>
+                                        <span class="col-two empty module-flex-order-1 text-success">+0.00%</span>
+                                    </div>                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="module">
+                        <div class="module-container">
+                            <div class="module-container-top">
+                                <div class="module-container-top-icon module-container-top-icon-yellow">
+                                    <div class="module-container-top-icon-iconly">
+                                            <img  src="./assets/Iconly/Light/2 User1.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="module-container-top-filter">
+                                    <span class="text-black-10">This weak</span>
+                                    <img class="module-container-top-image" src="" alt="">
+                                </div>
+                            </div>
+                            <div class="module-container-bottom">
+                                <div class="module-container-bottom-column module-flex-order-0">
+                                    <p class="module-flex-order-0 text-black-30">Customers</p>
+                                    <div class="show_numbers module-flex-order-1">
+                                        <span class="col-one module-flex-order-0 text-black-60">0</span>
+                                        <span class="col-two module-flex-order-1 text-success">+0.00%</span>
+                                    </div>
+                                </div>
+                                <div class="module-container-bottom-column module-flex-order-1">
+                                    <p class="module-flex-order-0 text-black-30">Active</p>
+                                    <div class="show_numbers module-flex-order-1">
+                                        <span class="col-one module-flex-order-0 text-black-60">0</span>
+                                        <span class="col-two module-flex-order-1 text-success">+0.00%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="module">
+                        <div class="module-container">
+                            <div class="module-container-top">
+                                <div class="module-container-top-icon module-container-top-icon-yellow">
+                                    <img  src="./assets/Iconly/Light/Bag1.png" alt="">
+                                </div>
+                                <div class="module-container-top-filter">
+                                    <span class="text-black-10">This weak</span>
+                                    <img class="module-container-top-image" src="" alt="">
+                                </div>
+                            </div>
+                            <div class="module-container-bottom">
+                                <div class="module-container-bottom-column module-flex-order-0">
+                                    <p class="module-flex-order-0 text-black-30">All Orders</p>
+                                    <div class="show_numbers  module-flex-order-1">
+                                        <span class="col-one module-flex-order-0 text-black-60">0</span>
+                                        <span class="col-two empty module-flex-order-1 text-success">+0.00%</span>
+                                    </div>                                
+                                </div>
+                                <div class="module-container-bottom-column module-flex-order-1">
+                                    <p class="module-flex-order-0 text-black-30">Pending</p>
+                                    <div class="show_numbers  module-flex-order-1">
+                                        <span class="col-one module-flex-order-0 text-black-60">0</span>
+                                        <span class="col-two empty module-flex-order-1 text-success">+0.00%</span>
+                                    </div>                                
+                                </div>
+                                <div class="module-container-bottom-column module-flex-order-2">
+                                    <p class="module-flex-order-0 text-black-30">Completed</p>
+                                    <div class="show_numbers module-flex-order-1">
+                                        <span class="col-one module-flex-order-0 text-black-60">0</span>
+                                        <span class="col-two module-flex-order-1 text-success">+0.00%</span>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- segunda linha-->
+            <div class="row">
+                <!-- primeira coluna-->
+                <div class="col-8">
+                    <!-- primeira coluna-->
+                    <div class="row">
+                        <!-- module marketing -->
+                        <div class="col-6">
+                            <div class="module module-marketing">
+                                <div class="module-marketing-content">
+                                    <div class="module-marketing-content-top">
+                                        <div class="module-marketing-content-top-frame">
+                                            <span class="text-black-60">Marketing</span>
+                                            <div class="module-marketing-content-top-frame-filter">
+                                                <span class="text-black-10">This Weak</span>
+                                                <img class="hide" src="./assets/fi_chevron-down.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="module-marketing-content-top-container">
+                                            <div class="module-marketing-content-top-container-key"><div class="point bg-primary-100"></div><span class="text-black-20">Acquisition</span></div>
+                                            <div class="module-marketing-content-top-container-key"><div class="point bg-primary-50"></div><span class="text-black-20">Purschase</span></div>
+                                            <div class="module-marketing-content-top-container-key"><div class="point bg-secondary-100"></div><span class="text-black-20">Retention</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="module-marketing-content-center">
+                                        <div class="rectangle-5 bg-primary-100"></div>
+                                        <div class="rectangle-6 bg-primary-50 "></div>
+                                        <div class="rectangle-7 bg-secondary-100"></div>
+                                    </div>
+                                    <div class="module-marketing-content-bottom hide">
+                                        <div class="module-marketing-content-bottom-eclipse"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="module module-blue text-primary-100">
+                                        <div class="module-container ">
+                                            <div class="module-container-top">
+                                                <div class="module-container-top-icon">
+                                                    <img  src="./assets/Iconly/Light/Folder1.png" alt="">
+                                                </div>
+                                                <div class="module-container-top-filter">
+                                                    <span class="text-black-10">This weak</span>
+                                                    <img class="module-container-top-image" src="" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="module-container-bottom">
+                                                <div class="module-container-bottom-column module-flex-order-0">
+                                                    <p class="module-flex-order-0 text-white">All Products</p>
+                                                    <div class="show_numbers module-flex-order-1">
+                                                        <span class="col-one module-flex-order-0 text-white">0</span>
+                                                        <span class="col-two module-flex-order-1 text-primary-10">+0.00%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="module-container-bottom-column module-flex-order-1">
+                                                    <p class="module-flex-order-0 text-white">Active</p>
+                                                    <div class="show_numbers  module-flex-order-1">
+                                                        <span class="col-one module-flex-order-0 text-white">0</span>
+                                                        <span class="col-two module-flex-order-1 text-primary-10 ">+0.00%</span>
+                                                    </div>                                
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="module">
+                                        <div class="module-container">
+                                            <div class="module-container-top">
+                                                <div class="module-container-top-icon module-container-top-icon-yellow">
+                                                    <img  src="./assets/fi_shopping-cart.png" alt="">
+                                                </div>
+                                                <div class="module-container-top-filter">
+                                                    <span class="text-black-10">This weak</span>
+                                                    <img class="module-container-top-image" src="" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="module-container-bottom">
+                                                <div class="module-container-bottom-column module-flex-order-0">
+                                                    <p class="module-flex-order-0 text-warning">Abandoned Cart</p>
+                                                    <div class="show_numbers module-flex-order-1">
+                                                        <span class="col-one module-flex-order-0 text-black-60">0%</span>
+                                                        <span class="col-two module-flex-order-1 text-success">+0.00%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="module-container-bottom-column module-flex-order-1">
+                                                    <p class="module-flex-order-0 text-black-30">Customers</p>
+                                                    <div class="show_numbers  module-flex-order-1">
+                                                        <span class="col-one module-flex-order-0 text-black-60">0</span>
+                                                        <span class="col-two empty module-flex-order-1 text-success">+0.00%</span>
+                                                    </div>                                
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="module module-summary">
+                                <div class="module-chart">
+                                    <div class="module-chart-heading">
+                                        <div class="module-chart-heading-frame">
+                                            <span class="text-black-60">Summary</span>
+                                            <div class="icon">
+                                                <div class="icon-frame">
+                                                    <span class="text-primary-100">Sales</span>
+                                                    <div class="chevron-down">
+                                                        <img src="./assets/Vector.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filter">
+                                            <span class="text-black-100">Last 7 Days</span>
+                                        </div>
+                                    </div>
+                                    <div class="module-chart-graph">
+                                        <div class="axis">
+                                            <span class="text-black-20">100K</span>
+                                            <span class="text-black-20">80K</span>
+                                            <span class="text-black-20">60K</span>
+                                            <span class="text-black-20">40K</span>
+                                            <span class="text-black-20">20K</span>
+                                        </div>
+                                        <div class="module-chart-graph-bar">
+                                            <div class="module-chart-graph-bar_bar-rectangle1">
+                                                <div class="module-chart-graph-bar_bar-rectangle2 bg-primary-100 bar-1">
+                                                </div>
+                                            </div>
+                                            <span class="text-black-10">Sept 10</span>
+                                        </div><div class="module-chart-graph-bar">
+                                            <div class="module-chart-graph-bar_bar-rectangle1">
+                                                <div class="module-chart-graph-bar_bar-rectangle2 bg-primary-100 bar-2">
+                                                </div>
+                                            </div>
+                                            <span class="text-black-10">Sept 11</span>
+                                        </div>
+                                        <div class="module-chart-graph-bar">
+                                            <div class="module-chart-graph-bar_bar-rectangle1">
+                                                <div class="module-chart-graph-bar_bar-rectangle2 bg-primary-100 bar-3">
+                                                </div>
+                                            </div>
+                                            <span class="text-black-10">Sept 12</span>
+                                        </div>
+                                        <div class="module-chart-graph-bar">
+                                            <div class="module-chart-graph-bar_bar-rectangle1">
+                                                <div class="module-chart-graph-bar_bar-rectangle2 bg-primary-100 bar-4">
+                                                </div>
+                                            </div>
+                                            <span class="text-black-10">Sept 13</span>
+                                        </div>
+                                        <div class="module-chart-graph-bar">
+                                            <div class="module-chart-graph-bar_bar-rectangle1">
+                                                <div class="module-chart-graph-bar_bar-rectangle2 bg-primary-100 bar-5">
+                                                </div>
+                                            </div>
+                                            <span class="text-black-10">Sept 14</span>
+                                        </div>
+                                        <div class="module-chart-graph-bar">
+                                            <div class="module-chart-graph-bar_bar-rectangle1">
+                                                <div class="module-chart-graph-bar_bar-rectangle2 bg-primary-100 bar-6">
+                                                </div>
+                                            </div>
+                                            <span class="text-black-10">Sept 15</span>
+                                        </div>
+                                        <div class="module-chart-graph-bar">
+                                            <div class="module-chart-graph-bar_bar-rectangle1">
+                                                <div class="module-chart-graph-bar_bar-rectangle2 bg-primary-100 bar-7">
+                                                </div>
+                                            </div>
+                                            <span class="text-black-10">Sept 16</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- coluna orders-->
+                <div class="col-4">
+                    <div class="module module-order">
+                        <div class="module-order-frame">
+                            <span class="text-black-60">Recent Orders</span>
+                            <div class="module-order-frame-recentOrders">
+                                <div class="oneCard">
+                                    <div class="oneCard-container">
+                                        <img src="./assets/Rectangle 3.png" alt="">
+                                        <div class="content">
+                                            <div class="content-top">
+                                                <span class=" top-left text-black-60">IPhone 13</span>
+                                                <div class="top-filter">
+                                                    <span class="top-right text-black-20">12 Sept 2022</span>
+                                                </div>
+                                            </div>
+                                            <div class="content-bottom">
+            
+                                                <div class="content-bottom-left"><span class="text-black-80">₦730,000.00 x 1</span></div>
+                                                <div class="content-bottom-right bg-warning"><span class="text-warning">Pending</span></div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="oneCard">
+                                    <div class="oneCard-container">
+                                        <img src="./assets/Rectangle 3_black.png" alt="">
+                                        <div class="content">
+                                            <div class="content-top">
+                                                <span class=" top-left text-black-60">IPhone 13</span>
+                                                <div class="top-filter">
+                                                    <span class="top-right text-black-20">12 Sept 2022</span>
+                                                </div>
+                                            </div>
+                                            <div class="content-bottom">
+            
+                                                <div class="content-bottom-left"><span class="text-black-80">₦730,000.00 x 1</span></div>
+                                                <div class="content-bottom-right bg-green"><span class="text-success">Completed</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="oneCard">
+                                    <div class="oneCard-container">
+                                        <img src="./assets/Rectangle 3.png" alt="">
+                                        <div class="content">
+                                            <div class="content-top">
+                                                <span class=" top-left text-black-60">IPhone 13</span>
+                                                <div class="top-filter">
+                                                    <span class="top-right text-black-20">12 Sept 2022</span>
+                                                </div>
+                                            </div>
+                                            <div class="content-bottom">
+            
+                                                <div class="content-bottom-left"><span class="text-black-80">₦730,000.00 x 1</span></div>
+                                                <div class="content-bottom-right bg-warning"><span class="text-warning">Pending</span></div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="oneCard">
+                                    <div class="oneCard-container">
+                                        <img src="./assets/Rectangle 3_black.png" alt="">
+                                        <div class="content">
+                                            <div class="content-top">
+                                                <span class=" top-left text-black-60">IPhone 13</span>
+                                                <div class="top-filter">
+                                                    <span class="top-right text-black-20">12 Sept 2022</span>
+                                                </div>
+                                            </div>
+                                            <div class="content-bottom">
+            
+                                                <div class="content-bottom-left"><span class="text-black-80">₦730,000.00 x 1</span></div>
+                                                <div class="content-bottom-right bg-green"><span class="text-success">completed</span></div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="oneCard">
+                                    <div class="oneCard-container">
+                                        <img src="./assets/Rectangle 3_black.png" alt="">
+                                        <div class="content">
+                                            <div class="content-top">
+                                                <span class=" top-left text-black-60">IPhone 13</span>
+                                                <div class="top-filter">
+                                                    <span class="top-right text-black-20">12 Sept 2022</span>
+                                                </div>
+                                            </div>
+                                            <div class="content-bottom">
+            
+                                                <div class="content-bottom-left"><span class="text-black-80">₦730,000.00 x 1</span></div>
+                                                <div class="content-bottom-right bg-green"><span class="text-success">Completed</span></div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="oneCard">
+                                    <div class="oneCard-container">
+                                        <img src="./assets/Rectangle 3_black.png" alt="">
+                                        <div class="content">
+                                            <div class="content-top">
+                                                <span class=" top-left text-black-60">IPhone 13</span>
+                                                <div class="top-filter">
+                                                    <span class="top-right text-black-20">12 Sept 2022</span>
+                                                </div>
+                                            </div>
+                                            <div class="content-bottom">
+            
+                                                <div class="content-bottom-left"><span class="text-black-80">₦730,000.00 x 1</span></div>
+                                                <div class="content-bottom-right bg-green"><span class="text-success">Completed</span></div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="oneCard">
+                                    <div class="oneCard-container">
+                                        <img src="./assets/Rectangle 3.png" alt="">
+                                        <div class="content">
+                                            <div class="content-top">
+                                                <span class=" top-left text-black-60">IPhone 13</span>
+                                                <div class="top-filter">
+                                                    <span class="top-right text-black-20">12 Sept 2022</span>
+                                                </div>
+                                            </div>
+                                            <div class="content-bottom">
+            
+                                                <div class="content-bottom-left"><span class="text-black-80">₦730,000.00 x 1</span></div>
+                                                <div class="content-bottom-right bg-warning"><span class="text-warning">Pending</span></div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="oneCard">
+                                    <div class="oneCard-container">
+                                        <img src="./assets/Rectangle 3.png" alt="">
+                                        <div class="content">
+                                            <div class="content-top">
+                                                <span class=" top-left text-black-60">IPhone 13</span>
+                                                <div class="top-filter">
+                                                    <span class="top-right text-black-20">12 Sept 2022</span>
+                                                </div>
+                                            </div>
+                                            <div class="content-bottom">
+            
+                                                <div class="content-bottom-left"><span class="text-black-80">₦730,000.00 x 1</span></div>
+                                                <div class="content-bottom-right bg-warning"><span class="text-warning">Pending</span></div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="oneCard">
+                                    <div class="oneCard-container">
+                                        <img src="./assets/Rectangle 3.png" alt="">
+                                        <div class="content">
+                                            <div class="content-top">
+                                                <span class=" top-left text-black-60">IPhone 13</span>
+                                                <div class="top-filter">
+                                                    <span class="top-right text-black-20">12 Sept 2022</span>
+                                                </div>
+                                            </div>
+                                            <div class="content-bottom">
+            
+                                                <div class="content-bottom-left"><span class="text-black-80">₦730,000.00 x 1</span></div>
+                                                <div class="content-bottom-right bg-warning"><span class="text-warning">Pending</span></div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
