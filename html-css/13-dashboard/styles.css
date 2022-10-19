@@ -893,9 +893,9 @@ body {
 }
 
 .main {
-  display: flex;
+  /*display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center;*/
   padding: 0px;
   gap: 52px;
   background: #E1E2E9;
@@ -946,9 +946,9 @@ body {
   align-items: center;
   padding: 0px;
   gap: 20px;
-  flex: none;
+  /*flex: none;
   order: 0;
-  flex-grow: 0;
+  flex-grow: 0;*/
 }
 
 .module {
@@ -1797,7 +1797,7 @@ body {
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
-  max-width: 282px;
+  width: 242px;
   text-align: center;
   flex: none;
   order: 1;
@@ -1805,10 +1805,12 @@ body {
 }
 
 .login {
-  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 1024px;
-  position: absolute;
   background: #F4F5FA;
 }
 
@@ -1818,6 +1820,13 @@ body {
   height: 76px;
   left: 0px;
   top: 0px;
+  /*& .iconly {
+      position: absolute;
+      left: 5.69%;
+      right: 90.69%;
+      top: 15.79%;
+      bottom: 15.79%;
+  }*/
 }
 .topnav .logo {
   position: absolute;
@@ -1826,25 +1835,12 @@ body {
   left: 82px;
   top: 12px;
 }
-.topnav .iconly {
-  position: absolute;
-  left: 5.69%;
-  right: 90.69%;
-  top: 15.79%;
-  bottom: 15.79%;
-}
 
 .login-container {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   padding: 44px 34px;
-  gap: 10px;
-  position: absolute;
-  width: 443px;
-  height: 627px;
-  left: 498px;
-  top: 197px;
   border-radius: 12px;
 }
 .login-container-form {

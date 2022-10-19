@@ -1,8 +1,10 @@
 .login {
-    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 1024px;
-    position: absolute;
     background: $main-background;
 }
 
@@ -20,13 +22,13 @@
         left: 82px;
         top: 12px;
     }
-    & .iconly {
+    /*& .iconly {
         position: absolute;
         left: 5.69%;
         right: 90.69%;
         top: 15.79%;
         bottom: 15.79%;
-    }
+    }*/
 }
 
 
@@ -35,13 +37,6 @@
     flex-direction: row;
     align-items: flex-start;
     padding: 44px 34px;
-    gap: 10px;
-
-    position: absolute;
-    width: 443px;
-    height: 627px;
-    left: 498px;
-    top: 197px;
 
     border-radius: 12px;
 
