@@ -1,7 +1,8 @@
 .module-order {
-    /*display: flex;
+    display: flex;
     flex-direction: row;
-    align-items: flex-start;*/
+    align-items: flex-start;
+    width: 100%;
     padding: 20px;
     gap: 10px;
 
@@ -11,9 +12,10 @@
         align-items: flex-start;
         padding: 0px;
         gap: 23px;
+        //width:100%
 
         //width: 383px;
-        height: 687px;
+        //height: 687px;
 
 
         /* Inside auto layout */
@@ -22,7 +24,7 @@
         order: 0;
         flex-grow: 1;
 
-        & span {
+        & .top-title {
             //width: 383px;
             height: 19px;
 
@@ -53,184 +55,43 @@
 
         }
     }
-        & .oneCard {
-            box-sizing: border-box;
+    & .oneCard {
+        box-sizing: border-box;
 
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 0px 0px 12px;
-            gap: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px 0px 12px;
+        gap: 10px;
 
-            //width: 383px;
-            height: 61px;
+        //width: 383px;
+        height: 61px;
 
-            border-bottom: 1px solid $stroke;
-            flex: none;
-            order: 0;
-            align-self: stretch;
-            flex-grow: 0;
-        }
+        border-bottom: 1px solid $stroke;
+        flex: none;
+        //order: 0;
+        align-self: stretch;
+        flex-grow: 0;
+    }
 
-        & .oneCard-container {
-            display: flex;
-            flex-direction: row;
-            align-items: flex-start;
-            padding: 0px;
-            gap: 14px;
+    & .oneCard-container {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 14px;
 
-            //width: 383px;
-            height: 49px;
-
-
-            /* Inside auto layout */
-
-            flex: none;
-            order: 0;
-            align-self: stretch;
-            flex-grow: 0;
-        }
-
-        & .content-top {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: flex-start;
-            padding: 0px;
-            //gap: 215px;
-            //gap: 120px;
-
-            //width: 320px;
-            height: 17px;
+        //width: 383px;
+        height: 49px;
 
 
-            /* Inside auto layout */
+        /* Inside auto layout */
 
-            flex: none;
-            order: 0;
-            align-self: stretch;
-            flex-grow: 0;
-        }
-
-        & .content-bottom {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: flex-start;
-            padding: 0px;
-            //gap: 131px;
-
-            //width: 320px;
-            height: 19px;
-
-            flex: none;
-            order: 1;
-            align-self: stretch;
-            flex-grow: 0;
-
-            &-left {
-                display: flex;
-                flex-direction: row;
-                align-items: flex-start;
-                padding: 0px;
-                gap: 9px;
-
-                //width: 112px;
-                height: 17px;
-
-
-                /* Inside auto layout */
-
-                flex: none;
-                order: 0;
-                flex-grow: 0;
-
-                /* Paragraph 2/Medium */
-                 & span {
-                font-family: 'Inter';
-                font-style: normal;
-                font-weight: 500;
-                font-size: 14px;
-                line-height: 17px;
-                }
-
-            }
-
-            &-right {
-                display: flex;
-                flex-direction: row;
-                align-items: flex-start;
-                padding: 2px 15px;
-                gap: 10px;
-
-                //width: 77px;
-                height: 19px;
-
-                //background: rgba(245, 126, 119, 0.12);
-                border-radius: 8px;
-
-                /* Inside auto layout */
-
-                flex: none;
-                order: 1;
-                flex-grow: 0;
-                & span {
-                    font-family: 'Inter';
-                    font-style: normal;
-                    font-weight: 400;
-                    font-size: 12px;
-                    line-height: 15px;
-                }
-            }
-        }
-
-        &  .top-filter {
-            display: flex;
-            flex-direction: row;
-            align-items: flex-start;
-            padding: 0px;
-            gap: 9px;
-
-            width: 76px;
-            height: 15px;
-
-
-            /* Inside auto layout */
-
-            flex: none;
-            order: 1;
-            flex-grow: 0;
-                    }
-
-        & .top-left {
-            width: 65px;
-            height: 17px;
-            
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 17px;
-
-            flex: none;
-            order: 0;
-            flex-grow: 0;
-        }
-
-        & .top-right {
-            width: 76px;
-            height: 15px;
-
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 12px;
-            line-height: 15px;
-
-            flex: none;
-            order: 0;
-            flex-grow: 0;
-        }
+        flex: none;
+        order: 0;
+        align-self: stretch;
+        flex-grow: 0;
+    }
 
     & .content {
         display: flex;
@@ -241,12 +102,256 @@
         width: 100%;
         //width: 320px;
         height: 46px;
+    } 
+
+    & .content-top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 0px;
+        //gap: 215px;
+        //gap: 120px;
+
+        //width: 320px;
+        height: 17px;
+
+
+        /* Inside auto layout */
+
+        flex: none;
+        order: 0;
+        align-self: stretch;
+        flex-grow: 0;
+    }
+
+    & .content-bottom {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 0px;
+        //gap: 131px;
+
+        //width: 320px;
+        height: 19px;
+
+        flex: none;
+        order: 1;
+        align-self: stretch;
+        flex-grow: 0;
+
+        &-left {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 0px;
+            gap: 9px;
+
+            //width: 112px;
+            height: 17px;
+
+
+            /* Inside auto layout */
+
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+
+            /* Paragraph 2/Medium */
+                & span {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+            }
+
+        }
+
+        &-right {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 2px 15px;
+            gap: 10px;
+
+            //width: 77px;
+            height: 19px;
+
+            //background: rgba(245, 126, 119, 0.12);
+            border-radius: 8px;
+
+            /* Inside auto layout */
+
+            flex: none;
+            order: 1;
+            flex-grow: 0;
+            & span {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 15px;
+            }
+        }
+    }
+
+    & .top-filter {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 9px;
+
+        width: 76px;
+        height: 15px;
 
 
         /* Inside auto layout */
 
         flex: none;
         order: 1;
-        flex-grow: 1;
-    }    
+        flex-grow: 0;
+                }
+
+    & .top-left {
+        width: 65px;
+        height: 17px;
+        
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+    }
+
+    & .top-right {
+        width: 76px;
+        height: 15px;
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+    }
+
+    & .frame-empty {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap:160px
+    }
+
+    & .empty-state {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px;
+        gap: 40px;
+
+        //width: 282px;
+        height: 324px;
+
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+    }
+
+    & .iconContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 140px;
+        height: 140px;
+
+        background: $main-background;
+
+        border: 1px solid $gray;
+        border-radius: 500px;
+
+        /*flex: none;
+        order: 0;
+        flex-grow: 0;*/
+    }
+
+    & .empty-state-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px;
+        gap: 24px;
+
+        //width: 282px;
+        //height: 144px;
+
+
+        /* Inside auto layout */
+
+        /*flex: none;
+        order: 1;
+        flex-grow: 0;*/
+    }
+
+    & .state-content-description {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px;
+        gap: 12px;
+
+        //width: 282px;
+        //height: 144px;
+
+
+        /* Inside auto layout */
+
+        /*flex: none;
+        order: 1;
+        flex-grow: 0;*/
+    }
+
+    & .state-content-description .first-description {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 30px;
+
+        height: 30px;
+
+        text-align: center;
+
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+    }
+
+    & .state-content-description .second-description {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+
+        max-width: 282px;
+
+        text-align: center;
+
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+    }
+   
 }
