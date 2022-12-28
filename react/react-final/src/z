@@ -1,0 +1,13 @@
+<nav>
+				<ul>
+					<li>
+						<Link to="/">Home</Link>
+					</li>
+					<li>
+						<Link to="/products">Books</Link>
+					</li>
+          <li>
+						<Link to="/products/1">Books</Link>
+					</li>
+				</ul>
+			</nav>
