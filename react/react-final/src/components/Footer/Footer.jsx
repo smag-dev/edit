@@ -1,25 +1,18 @@
+import Socials from "../Socials"
+import FooterLinks from "./FooterLinks"
+
+const footerColumn = [{ name: "Categories", links: ["About Us", "Testimonials", "Contact", "Journal", "Privacy Policy"]},
+                     { name: "Partners",    links: ["Support", "Shipping & Returns", "Size Guide", "Product Care"]},
+                    ]
 const Footer = () =>{
     return(
         <footer>
             <div className="gridrow">
                 <div className="col-4 col-d-2">
-                    <p className="margintopnone">Categories</p>
-                    <ul>
-                        <li><a href="#" title="About Us">About Us</a></li>
-                        <li><a href="#" title="Testimonials">Testimonials</a></li>
-                        <li><a href="#" title="Contact">Contact</a></li>
-                        <li><a href="#" title="Journal">Journal</a></li>
-                        <li><a href="#" title="Privacy Policy">Privacy Policy</a></li>
-                    </ul>
+                    <FooterLinks column = {footerColumn[0]} />
                 </div>
                 <div className="col-4 col-d-2">
-                    <p className="margintopnone">Partners</p>
-                    <ul>
-                        <li><a href="#" title="Support">Support</a></li>
-                        <li><a href="#" title="Shipping & Returns">Shipping & Returns</a></li>
-                        <li><a href="#" title="Size Guide">Size Guide</a></li>
-                        <li><a href="#" title="Product Care">Product Care</a></li>
-                    </ul>
+                    <FooterLinks column = {footerColumn[1]} />
                 </div>
                 <div className="col-4 col-d-2">
                     <p className="margintopnone">Contact us</p>
@@ -41,8 +34,8 @@ const Footer = () =>{
                         </div>
                     </form>
                     <div className="social">
-                        <a href="#" title="Facebook"><i className="icn-facebook"></i></a>
-                        <a href="#" title="Twitter"><i className="icn-twitter"></i></a>
+                        <Socials title="Facebook" icon="icn-facebook" />
+                        <Socials title="Twitter" icon="icn-twitter" />
                     </div>
                 </div>
             </div>

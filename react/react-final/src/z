@@ -11,3 +11,60 @@
 					</li>
 				</ul>
 			</nav>
+
+			function getProducts () {
+
+				/*var products_array = [];
+				const productsPromise =  fetch("https://foxcoding.net/api/getProductsList")
+				.then (function(response){
+					products_array =  response.json();
+				})
+				.then((data)=>{
+					return  data;
+				})
+				.catch(()=>{
+					console.log('erro');
+				});
+			
+				const products = () => {
+					productsPromise.then((data) => {
+						return data
+					});
+				  };*/
+			
+				/*const address = await fetch("https://jsonplaceholder.typicode.com/users/1")
+				  .then((response) => response.json())
+				  .then((user) => {
+					return user.address;
+				  });
+				
+				const printAddress = () => {
+				  address.then((a) => {
+					console.log(a);
+				  });
+				};*/
+				
+				//printAddress();
+			
+				/*const address = fetch("https://foxcoding.net/api/getProductsList")
+				  .then((response) => response.json())
+				  .then((data) => {
+					console.log(data);
+				  });
+				
+				const printAddress = () => {
+				  return address.then((data) => {
+					return data;
+				  }); ;
+				};*/
+				var xhttp = new XMLHttpRequest();
+			
+				xhttp.open("GET", "https://foxcoding.net/api/getProductsList", false);
+				xhttp.send();
+				/*xhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+					  return this.response;
+					}
+				  };*/
+				return JSON.parse(xhttp.response);  
+			}
