@@ -1,4 +1,4 @@
-import Socials from "../Socials"
+import Social from "../Social"
 import FooterLinks from "./FooterLinks"
 
 const footerColumn = [{ name: "Categories", links: ["About Us", "Testimonials", "Contact", "Journal", "Privacy Policy"]},
@@ -34,8 +34,8 @@ const Footer = () =>{
                         </div>
                     </form>
                     <div className="social">
-                        <Socials title="Facebook" icon="icn-facebook" />
-                        <Socials title="Twitter" icon="icn-twitter" />
+                        <Social title="Facebook" icon="icn-facebook" />
+                        <Social title="Twitter" icon="icn-twitter" />
                     </div>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-import Thumbs from "../Thumbs"
+import Thumb from "../Thumb"
 
 const thumbs = [
     {id : "1", name: "Red classNameic Chest Logo Hoodie 1" , image: "thumb01.jpg"},
@@ -14,7 +14,7 @@ const ProductInformationThumbs = () => {
         <div id="thumbs" className="col-3 col-t-1">
             {
             thumbs.map((thumb, index) => {
-                return <Thumbs key= {thumb.id} id = {thumb.id} name = {thumb.name} image={thumb.image} open = {index == 0 ? 'open' : ''}/>
+                return <Thumb key= {thumb.id} id = {thumb.id} name = {thumb.name} image={thumb.image} open = {index == 0 ? 'open' : ''}/>
                 })
             }
             {/*<a href="#" title="Red classNameic Chest Logo Hoodie 1" className="open">

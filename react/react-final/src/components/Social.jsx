@@ -1,7 +1,7 @@
-const Socials = ({title, icon}) => {
+const Social = ({title, icon}) => {
     return(
         <a href="#" title={title}><i className={icon}></i></a>
     )
 }
 
-export default Socials
+export default Social

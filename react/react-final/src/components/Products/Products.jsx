@@ -2,16 +2,11 @@ import { Link } from 'react-router-dom'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import Top from '../Top/Top'
-import ProductsProduct from './ProductsProduct'
+
 import Button from '../Button'
 import { useEffect, useState } from 'react'
+import Product from '../Product'
 
-const categories = {
-    1 : "Sneackers",
-    2 : "Coats",
-    3 : "Pants",
-    4 : "Jackets"
-}
 
 function inArray(needle, haystack) {
     var length = haystack.length;
@@ -43,7 +38,7 @@ function generateProductsFilteres(products, filtro)  {
 
 function generateRender(products)  {
     const res = products.map((product) => {
-        return(<ProductsProduct key={product.id} product={product} categories={categories}/>)
+        return(<Product key={product.id} type = "productlist" product={product}/>)
     })
 
     return res;

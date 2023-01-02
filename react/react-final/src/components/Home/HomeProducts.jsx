@@ -1,19 +1,20 @@
 import HomeProductsProduct from "./HomeProductsProduct"
+import Product from "../Product"
 
-const products = [{id : "01", description : "Black and purple Ren Sneakers", category : "Shoes", price : "$123.00", new : true},
-                  {id : "02", description : "Black and white Kaiwa Sneakers", category : "Shoes", price : "$213.00", new : false},
-                  {id : "03", description : "Black and white Poplin Polo", category : "Tops", price : "$312.00", new : false},
-                  {id : "04", description : "Black Canvas Workwear Cargo Pants", category : "Bottoms", price : "$231.00", new : false},
-                  {id : "05", description : "Black ClassNameic Broadcloth Parka", category : "Tops", price : "$321.00", new : false},
-                  {id : "06", description : "Black ClassNameic Chest Logo Hoodie", category : "Tops", price : "$322.00", new : false},
-                  {id : "07", description : "Black ClassNameic Cross Dyed Long Coat", category : "Tops", price : "$621.00", new : false},
-                  {id : "08", description : "Black ClassNameic Track Jacket", category : "Tops", price : "$412.00", new : false},
+const products = [{id : "01", name : "Black and purple Ren Sneakers", category : "Shoes", price : "123.00", new : true},
+                  {id : "02", name : "Black and white Kaiwa Sneakers", category : "Shoes", price : "213.00", new : false},
+                  {id : "03", name : "Black and white Poplin Polo", category : "Tops", price : "312.00", new : false},
+                  {id : "04", name : "Black Canvas Workwear Cargo Pants", category : "Bottoms", price : "231.00", new : false},
+                  {id : "05", name : "Black ClassNameic Broadcloth Parka", category : "Tops", price : "321.00", new : false},
+                  {id : "06", name : "Black ClassNameic Chest Logo Hoodie", category : "Tops", price : "322.00", new : false},
+                  {id : "07", name : "Black ClassNameic Cross Dyed Long Coat", category : "Tops", price : "621.00", new : false},
+                  {id : "08", name : "Black ClassNameic Track Jacket", category : "Tops", price : "412.00", new : false},
                 ]
 
 const generateProducts = (products) => {
 
     const res = products.map((product) => {
-        return(<HomeProductsProduct key={product.id} product={product}/>)
+        return(<Product key={product.id} type="home" product={product}/>)
     })
 
     return res;
