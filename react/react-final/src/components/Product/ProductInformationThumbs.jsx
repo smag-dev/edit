@@ -18,19 +18,19 @@ const ProductInformationThumbs = () => {
                 })
             }
             {/*<a href="#" title="Red classNameic Chest Logo Hoodie 1" className="open">
-                <img className="imgfit" src="./../../src/assets/imgs/products/thumbs/thumb01.jpg" alt="Red classNameic Chest Logo Hoodie 1" />
+                <img className="imgfit" src="/src/assets/imgs/products/thumbs/thumb01.jpg" alt="Red classNameic Chest Logo Hoodie 1" />
             </a>
             <a href="#" title="Red classNameic Chest Logo Hoodie 2">
-                <img className="imgfit" src="./../../src/assets/imgs/products/thumbs/thumb02.jpg" alt="Red classNameic Chest Logo Hoodie 2" />
+                <img className="imgfit" src="/src/assets/imgs/products/thumbs/thumb02.jpg" alt="Red classNameic Chest Logo Hoodie 2" />
             </a>
             <a href="#" title="Red classNameic Chest Logo Hoodie 3">
-                <img className="imgfit" src="./../../src/assets/imgs/products/thumbs/thumb03.jpg" alt="Red classNameic Chest Logo Hoodie 3" />
+                <img className="imgfit" src="/src/assets/imgs/products/thumbs/thumb03.jpg" alt="Red classNameic Chest Logo Hoodie 3" />
             </a>
             <a href="#" title="Red classNameic Chest Logo Hoodie 4">
-                <img className="imgfit" src="./../../src/assets/imgs/products/thumbs/thumb04.jpg" alt="Red classNameic Chest Logo Hoodie 4" />
+                <img className="imgfit" src="/src/assets/imgs/products/thumbs/thumb04.jpg" alt="Red classNameic Chest Logo Hoodie 4" />
             </a>
             <a href="#" title="Red classNameic Chest Logo Hoodie 5">
-                <img className="imgfit" src="./../../src/assets/imgs/products/thumbs/thumb05.jpg" alt="Red classNameic Chest Logo Hoodie 5" />
+                <img className="imgfit" src="/src/assets/imgs/products/thumbs/thumb05.jpg" alt="Red classNameic Chest Logo Hoodie 5" />
             </a>*/}
         </div>
     )

@@ -8,16 +8,17 @@ const products = [{id : "21", name : "Black classNameic Broadcloth Parka", categ
                 ]
 
 const ProductProducts = () => {
-    return(<>
-                <h2 className="textcenter marginverticalfull">Related Products</h2>
-                <div className="gridrow marginbottomdouble product-list">
-                    {
-                        products.map((product) => {
-                            return(<Product key={product.id} type="product" product={product}/>)
-                        })
-                    }
-                </div>
-            </>
+    return(
+        <>
+        <h2 className="textcenter marginverticalfull">Related Products</h2>
+        <div className="gridrow marginbottomdouble product-list">
+            {
+                products.map((product) => {
+                    return(<Product key={product.id} type="product" product={product}/>)
+                })
+            }
+        </div>
+        </>
     )
 }
 

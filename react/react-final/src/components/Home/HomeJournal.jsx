@@ -63,7 +63,7 @@ const HomeJournal = () => {
                         <h3>Royal Designer for Industry</h3>
                         <p>The title "Royal Designer for Industry" (RDI) is awarded annually by the RSA to designers of all disciplines who have achieved "sustained design excellence, work of aesthetic value and significant benefit to society."</p>
                         <div className="journal-card-image">
-                            <img className="imgfit" srcSet="./../../src/assets/imgs/journal/journal01.jpg 720w, ./../../src/assets/imgs/journal/medium/journal01.jpg 360w" sizes="(min-width: 750px) 720px, 360px" src="./../../src/assets/imgs/journal/journal01.jpg" />
+                            <img className="imgfit" srcSet="/src/assets/imgs/journal/journal01.jpg 720w, /src/assets/imgs/journal/medium/journal01.jpg 360w" sizes="(min-width: 750px) 720px, 360px" src="/src/assets/imgs/journal/journal01.jpg" />
                         </div>
                     </a>
                 </div>
@@ -72,7 +72,7 @@ const HomeJournal = () => {
                         <p className="fancytext">Awards - January 2011</p>
                         <h3>Commander of the Order of Arts and Letters</h3>
                         <div className="journal-card-image">
-                            <img className="imgfit" srcSet="./../../src/assets/imgs/journal/journal02.jpg 720w, ./../../src/assets/imgs/journal/medium/journal02.jpg 360w" sizes="(min-width: 1200px) 720px, 360px" src="./../../src/assets/imgs/journal/journal02.jpg" />
+                            <img className="imgfit" srcSet="/src/assets/imgs/journal/journal02.jpg 720w, /src/assets/imgs/journal/medium/journal02.jpg 360w" sizes="(min-width: 1200px) 720px, 360px" src="/src/assets/imgs/journal/journal02.jpg" />
                         </div>
                     </a>
                     <a href="#" title="View Journal" className="journal-card journal-card-small">
@@ -91,7 +91,7 @@ const HomeJournal = () => {
                         <p className="fancytext">Collections - January 2006</p>
                         <h3>New Collection</h3>
                         <div className="journal-card-image">
-                            <img className="imgfit" srcSet="./../../src/assets/imgs/journal/journal03.jpg 720w, ./../../src/assets/imgs/journal/medium/journal03.jpg 360w" sizes="(min-width: 1200px) 720px, 360px" src="./../../src/assets/imgs/journal/journal03.jpg" />
+                            <img className="imgfit" srcSet="/src/assets/imgs/journal/journal03.jpg 720w, /src/assets/imgs/journal/medium/journal03.jpg 360w" sizes="(min-width: 1200px) 720px, 360px" src="/src/assets/imgs/journal/journal03.jpg" />
                         </div>
                     </a>
                 </div>*/}

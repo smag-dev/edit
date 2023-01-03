@@ -4,7 +4,7 @@ const Header = () =>{
             <nav className="gridrow">
                 <div className="col-5 col-t-3 col-d-2" id="logo">
                     <a href="/" title="Ir para a página inicial">
-                        <img className="imgfit" src="./../../src/assets/imgs/logo.svg" alt="Edit Store Logo" />
+                        <img className="imgfit" src="/src/assets/imgs/logo.svg" alt="Edit Store Logo" />
                     </a>
                 </div>
                 <ul id="mainmenu" className="col-12 col-t-6 col-d-7">
