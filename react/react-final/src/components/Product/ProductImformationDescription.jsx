@@ -1,8 +1,23 @@
 import ProductInformationProductcare from "./ProductInformationProductcare"
 import Score from "../Score"
 import Sizes from "../Sizes"
+import { useState } from "react"
 
 const ProductInformationDescription = ({product}) => {
+    const sizeKeys = Object.keys(product.sizes);
+    const [maxquantity, setMaxquantity] = useState(product.sizes[sizeKeys[0]]);
+    const [quantity, setQuantity] = useState(1);
+    console.log(maxquantity);
+    function changeQuantity(type){
+        console.log(quantity+'ola')
+        if (type == '-' && quantity - 1 > 0){
+            setQuantity(quantity-1);
+        }
+        if (type == '+' && (quantity + 1 <= maxquantity)){
+            setQuantity(quantity+1);
+        }
+    }
+
     return(
         <div id="product-description" className="col-12 col-t-7 col-d-6">
             <h1>{product.name}</h1>
@@ -45,7 +60,11 @@ const ProductInformationDescription = ({product}) => {
                     Size
                 </div>
                 <div className="col-6 sizebtns">
-                    <Sizes sizes={Object.keys(product.sizes)} />
+                    <Sizes sizes={product.sizes} 
+                           setMaxquantity={setMaxquantity} 
+                           setQuantity={setQuantity}
+                           quantity={quantity}
+                           />
                 </div>
                 <div className="col-6 textright">
                     <a href="#" title="Size Guidelines" className="fancytext">Size Guidelines</a>
@@ -57,9 +76,9 @@ const ProductInformationDescription = ({product}) => {
                     Quantity
                 </div>
                 <div className="col-6 col-d qty">
-                    <button type="button" className="btnleft">-</button>
-                    <input type="number" value="1" name="qty"/>
-                    <button type="button" className="btnright">+</button>
+                    <button type="button" className="btnleft" onClick={() => changeQuantity('-')}>-</button>
+                    <input type="number" value={quantity} name="qty"/>
+                    <button type="button" className="btnright" onClick={() => changeQuantity('+')}>+</button>
                 </div>
                 <div className="col-6 col-d cart">
                     <button type="button">Add to cart</button>

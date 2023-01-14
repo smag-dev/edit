@@ -40,11 +40,14 @@ function generateRender(products)  {
     return res;
 }
 
+
 const Products = () => {
     //hook que guarda o filtro, categoria e seu valor ou tamanho e seu valor
     const [filter, setFilter] = useState('')
     //hook que guarda a renderizacao
     const [filterrender, setFilterrender] = useState('');
+
+    const [order, setOrder] = useState('price');
 
     useEffect(()=> {
         fetch("https://foxcoding.net/api/getProductsList")
@@ -54,13 +57,32 @@ const Products = () => {
         .then((data)=>{
             console.log(data.data.products)
             const products = generateProductsFiltered(data.data.products, filter);
+            switch(order) {
+                case 'price':
+                    products.sort((p1, p2) => (p1.price < p2.price) ? -1 : (p1.price > p2.price) ? 1 : 0);
+                  break;
+                case 'name':
+                    products.sort((p1, p2) => (p1.name < p2.name) ? -1 : (p1.name > p2.name) ? 1 : 0);
+                  break;
+                case 'popularity':
+                products.sort((p1, p2) => (p1.score < p2.score) ? 1 : (p1.score > p2.score) ? -1 : 0);
+                break;
+            }
+
             setFilterrender(generateRender(products));
         })
         .catch(()=>{
             console.log('erro');
         });
-    },[filter])
-    
+    },[filter, order])
+
+
+
+    const handleChangeOrder = (event) => {
+        const value  = event.target.value;
+        setOrder(value)
+    }
+
     return ( 
             <>
             <div id="headerproductlist">
@@ -73,11 +95,11 @@ const Products = () => {
                 <div className="gridrow">
                     <div className="col-4">Tops</div>
                     <div className="col-8 textright">Sort by
-                        <select>
-                            <option value="Price" selected>Price</option>
-                            <option value="Popularity">Popularity</option>
-                            <option value="Name">Name</option>
-                            <option value="Season">Season</option>
+                        <select onChange={handleChangeOrder} value={order}>
+                            <option value="price" >Price</option>
+                            <option value="popularity">Popularity</option>
+                            <option value="name">Name</option>
+                            <option value="season">Season</option>
                         </select>
                     </div>
                 </div>

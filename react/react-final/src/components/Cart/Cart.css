@@ -1,0 +1,12 @@
+.width-50 {
+    width: 50%;
+}
+.width-10 {
+    width: 10%;
+}
+.width-20 {
+    width: 20%;
+}
+#cart td, #cart th{
+    text-align: center;
+}

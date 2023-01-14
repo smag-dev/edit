@@ -1,4 +1,8 @@
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 const Header = () =>{
+    const cart = useContext(CartContext);
+
     return(
         <header className="bg-white">
             <nav className="gridrow">
@@ -17,7 +21,7 @@ const Header = () =>{
                     <li><a href="#" title="Login">Login</a></li>
                     <li><a href="#" title="Search"><i className="icn-search"></i></a></li>
                     <li><a href="#" title="Wishlist"><i className="icn-heart"></i></a></li>
-                    <li><a href="#" title="Shopping Cart"><i className="icn-shopping-cart"></i></a></li>
+                    <li><a href="/cart" title="Shopping Cart"><i className="icn-shopping-cart">({cart.getTotalProducts()})</i></a></li>
                 </ul>
             </nav>
         </header>
