@@ -55,7 +55,6 @@ const Products = () => {
             return response.json();
         })
         .then((data)=>{
-            console.log(data.data.products)
             const products = generateProductsFiltered(data.data.products, filter);
             switch(order) {
                 case 'price':

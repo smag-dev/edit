@@ -1,4 +1,6 @@
 import ProductInformationProductcare from "./ProductInformationProductcare"
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext"
 import Score from "../Score"
 import Sizes from "../Sizes"
 import { useState } from "react"
@@ -7,6 +9,8 @@ const ProductInformationDescription = ({product}) => {
     const sizeKeys = Object.keys(product.sizes);
     const [maxquantity, setMaxquantity] = useState(product.sizes[sizeKeys[0]]);
     const [quantity, setQuantity] = useState(1);
+    const {addProduct} = useContext(CartContext)
+
     console.log(maxquantity);
     function changeQuantity(type){
         console.log(quantity+'ola')
@@ -81,7 +85,7 @@ const ProductInformationDescription = ({product}) => {
                     <button type="button" className="btnright" onClick={() => changeQuantity('+')}>+</button>
                 </div>
                 <div className="col-6 col-d cart">
-                    <button type="button">Add to cart</button>
+                    <button type="button" onClick={() => addProduct({id : product.id, name : product.name, img : product.image, quantity : quantity, price : product.price})}>Add to cart</button>
                 </div>
                 <div className="col-12 col-d textright wishlist marginbottomtwothirds">
                     <a href="#" title="Add top wishlist" className="fancytext"><i className="icn-heart"></i> Add to wishlist</a>

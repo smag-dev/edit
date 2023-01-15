@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import './Cart.css'
 const Cart = () => {
-    const {products, getTotalPriceProduct} = useContext(CartContext)
+    const {products, getTotalPriceProduct, getTotalPriceProducts, removeProduct,changeQuantityCart} = useContext(CartContext)
     console.log(products)
     return(
         <section id="cart" className="paddingverticaldouble">
@@ -13,10 +13,11 @@ const Cart = () => {
                     <thead>
                         <tr>
                         <th className="width-10">Image</th>
-                        <th className="width-50">Name</th>
+                        <th className="width-40">Name</th>
                         <th className="width-10">Quantity</th>
                         <th className="width-10">Price</th>
                         <th className="width-20">Total Price</th>
+                        <th className="width-10">Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -24,15 +25,19 @@ const Cart = () => {
                         return (
                             
                             <tr key={product.img}>
-                            <td><img width="100"  srcSet={product.img}></img></td>
+                            <td><a href={"/product/"+product.id}><img width="100"  srcSet={product.img}></img></a></td>
                             <td>{product.name}</td>
-                            <td>{product.quantity}</td>
+                            <td><button type="button" className="btnleft" onClick={() => changeQuantityCart(product.id, '-')}>-</button>
+                                <input type="number" value={product.quantity} name="qty" onChange={() => alert('la')}/>
+                                <button type="button" className="btnright" onClick={() => changeQuantityCart(product.id,'+')}>+</button></td>
                             <td>{product.price}€</td>
                             <td>{getTotalPriceProduct(product).toFixed(2)}€</td>
+                            <td onClick={() => removeProduct(product.id)}>Delete</td>
                             </tr>
                             
                         )
                     })}
+                     <tr><td colSpan="5" className="totalProducts">Total Products:</td><td>{getTotalPriceProducts().toFixed(2)}€</td></tr>
                     </tbody>
                 </table>
                 </div>
