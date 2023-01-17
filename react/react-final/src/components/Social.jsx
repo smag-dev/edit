@@ -1,6 +1,8 @@
+
+import { Link } from "react-router-dom"
 const Social = ({title, icon}) => {
     return(
-        <a href="#" title={title}><i className={icon}></i></a>
+        <Link to="#" title={title}><i className={icon}></i></Link>
     )
 }
 

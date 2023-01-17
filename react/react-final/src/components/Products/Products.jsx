@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Product from '../Product'
 import { useEffect, useState } from 'react'
 
@@ -109,11 +110,11 @@ const Products = () => {
                     <p className="fancytext">Filters</p>
                     <ul className="categories">
                         <li className="open">
-                            <a href="#" title="Tops">
+                            <Link to="#" title="Tops">
                                 Tops 
                                 <i className="icn-chevron-down"></i>
                                 <i className="icn-chevron-up"></i>
-                            </a>
+                            </Link>
                             <ul>
                                 {/*<li><a href="#" title="Jackets"><i className="icn-chevron-right"></i> Jackets</a></li>
                                 <li><a href="#" title="Sweaters"><i className="icn-chevron-right"></i> Sweaters</a></li>
@@ -124,11 +125,11 @@ const Products = () => {
                             </ul>
                         </li>
                         <li className="open">
-                            <a href="#" title="Bottoms">
+                            <Link to="#" title="Bottoms">
                                 Bottoms
                                 <i className="icn-chevron-down"></i>
                                 <i className="icn-chevron-up"></i>
-                            </a>
+                            </Link>
                             <ul>
                                 {/*<li><a href="#" title="Shorts"><i className="icn-chevron-right"></i> Shorts</a></li>
                                 <li><a href="#" title="Trousers"><i className="icn-chevron-right"></i> Trousers</a></li>
@@ -137,11 +138,11 @@ const Products = () => {
                             </ul>
                         </li>
                         <li className="open">
-                            <a href="#" title="Bags">
+                            <Link to="#" title="Bags">
                                 Bags
                                 <i className="icn-chevron-down"></i>
                                 <i className="icn-chevron-up"></i>
-                            </a>
+                            </Link>
                             <ul>
                                 {/*<li><a href="#" title="Travel"><i className="icn-chevron-right"></i> Travel</a></li>
                                 <li><a href="#" title="Work"><i className="icn-chevron-right"></i> Work</a></li>*/}
@@ -149,11 +150,11 @@ const Products = () => {
                             </ul>
                         </li>
                         <li className="open">
-                            <a href="#" title="Bags">
+                            <Link to="#" title="Bags">
                                 Shoes
                                 <i className="icn-chevron-down"></i>
                                 <i className="icn-chevron-up"></i>
-                            </a>
+                            </Link>
                             <ul>
                                 <li><a  title="Sneakers" onClick={() => setFilter('category-1')}><i className="icn-chevron-right"></i> Sneakers</a></li>
                                 {/*<li><a href="#" title="Boots"><i className="icn-chevron-right"></i> Boots</a></li>
@@ -169,13 +170,13 @@ const Products = () => {
                             <button type="button" onClick={() => setFilter('sizes-3')}>3</button>
                             <button type="button" onClick={() => setFilter('sizes-4')}>4</button>
                         </div>
-                        <a href="#" title="View Size Guide" className="fancytext">See our sizing guide</a>
+                        <Link to="#" title="View Size Guide" className="fancytext">See our sizing guide</Link>
                     </div>
                 </div>
                 <div id="mainproductlist" className="product-list col-12 col-t-8 col-d-9 gridrowfull">
                     {filterrender}
                     <div className="central-link-light marginbottomdouble">
-                        <a href="#" title="Load More"><i className="icn-reload"></i> Load More</a>
+                        <Link to="#" title="Load More"><i className="icn-reload"></i> Load More</Link>
                     </div>
                 </div>
             </div>

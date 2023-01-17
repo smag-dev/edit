@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ProductInformationProductcare from "./ProductInformationProductcare"
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext"
@@ -71,7 +72,7 @@ const ProductInformationDescription = ({product}) => {
                            />
                 </div>
                 <div className="col-6 textright">
-                    <a href="#" title="Size Guidelines" className="fancytext">Size Guidelines</a>
+                    <Link to="#" title="Size Guidelines" className="fancytext">Size Guidelines</Link>
                 </div>
                 <div className="col-12 small graymedium">
                     Model is a US size 2-4, wears Matter size 1. 175cm tall.
@@ -88,7 +89,7 @@ const ProductInformationDescription = ({product}) => {
                     <button type="button" onClick={() => addProduct({id : product.id, name : product.name, img : product.image, quantity : quantity, price : product.price})}>Add to cart</button>
                 </div>
                 <div className="col-12 col-d textright wishlist marginbottomtwothirds">
-                    <a href="#" title="Add top wishlist" className="fancytext"><i className="icn-heart"></i> Add to wishlist</a>
+                    <Link to="#" title="Add top wishlist" className="fancytext"><i className="icn-heart"></i> Add to wishlist</Link>
                 </div>
             </div>
             

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const Button = ({title, text}) => {
     {/*     
             Home
@@ -26,7 +28,7 @@ const Button = ({title, text}) => {
 
     return(
         <div className="central-link">
-            <a href="#" title={title}>{text}</a>
+            <Link to="#" title={title}>{text}</Link>
         </div>
     )
 }

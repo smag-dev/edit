@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
+import { Link } from "react-router-dom";
 const Header = () =>{
     const cart = useContext(CartContext);
 
@@ -7,21 +8,21 @@ const Header = () =>{
         <header className="bg-white">
             <nav className="gridrow">
                 <div className="col-5 col-t-3 col-d-2" id="logo">
-                    <a href="/" title="Ir para a página inicial">
+                    <Link to="/" title="Ir para a página inicial">
                         <img className="imgfit" src="/src/assets/imgs/logo.svg" alt="Edit Store Logo" />
-                    </a>
+                    </Link>
                 </div>
                 <ul id="mainmenu" className="col-12 col-t-6 col-d-7">
-                    <li><a href="/products" title="Shop">Shop <i className="icn-chevron-down"></i></a></li>
-                    <li><a href="#" title="Fabric">Fabric <i className="icn-chevron-down"></i></a></li>
-                    <li><a href="/#journal" title="Journal">Journal <i className="icn-chevron-down"></i></a></li>
-                    <li><a href="/#about" title="About">About <i className="icn-chevron-down"></i></a></li>
+                    <li><Link to="/products" title="Shop">Shop <i className="icn-chevron-down"></i></Link></li>
+                    <li><Link to="#" title="Fabric">Fabric <i className="icn-chevron-down"></i></Link></li>
+                    <li><Link to="/#journal" title="Journal">Journal <i className="icn-chevron-down"></i></Link></li>
+                    <li><Link to="/#about" title="About">About <i className="icn-chevron-down"></i></Link></li>
                 </ul>
                 <ul id="customermenu" className="col-7 col-t-3 col-d-2 textright">
-                    <li><a href="#" title="Login">Login</a></li>
-                    <li><a href="#" title="Search"><i className="icn-search"></i></a></li>
-                    <li><a href="#" title="Wishlist"><i className="icn-heart"></i></a></li>
-                    <li><a href="/cart" title="Shopping Cart"><i className="icn-shopping-cart">({cart.getTotalProducts()})</i></a></li>
+                    <li><Link to="#" title="Login">Login</Link></li>
+                    <li><Link to="#" title="Search"><i className="icn-search"></i></Link></li>
+                    <li><Link to="#" title="Wishlist"><i className="icn-heart"></i></Link></li>
+                    <li><Link to="/cart" title="Shopping Cart"><i className="icn-shopping-cart">({cart.getTotalProducts()})</i></Link></li>
                 </ul>
             </nav>
         </header>

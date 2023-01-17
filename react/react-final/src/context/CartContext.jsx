@@ -1,4 +1,4 @@
-import {createContext, useContext, useState } from 'react';
+import {children, createContext, useContext, useState } from 'react';
 
 // Valor inicial do nosso Contexto
 const initialValue = []
@@ -9,11 +9,11 @@ export const CartContext = createContext(initialValue);
 
 //2º - Criação do Provider
 export const CartProvider = ({ children }) => {
-  //const [products, setProducts] = useState(initialValue);
+  const [products, setProducts] = useState(initialValue);
 
   // isto fui buscar a https://gist.github.com/tkrebs2/36cd7779947f7d286f3e545bfea247ee
   //mas percebi, grava no browser
-  const [products, setProducts] = useState(() => {
+  /*const [products, setProducts] = useState(() => {
     try {
       // Get from local storage by key
       const item = window.localStorage.getItem('cart');
@@ -24,9 +24,9 @@ export const CartProvider = ({ children }) => {
       console.log(error);
       return initialValue;
     }
-  });
+  });*/
   
-  const setValue = value => {
+  /*const setValue = value => {
     try {
       // Allow value to be a function so we have same API as useState
       //const valueToStore =
@@ -40,7 +40,7 @@ export const CartProvider = ({ children }) => {
       // A more advanced implementation would handle the error case
       console.log(error);
     }
-  };
+  };*/
 
   const addProduct = (product) => {
     let inCart = products.find(element => element.id  == product.id) 
@@ -51,19 +51,20 @@ export const CartProvider = ({ children }) => {
         }
         return tmpproduct;
       })
-      setValue(tmpProducts);
-      //setProducts(tmpProducts);
+      //setValue(tmpProducts);
+      setProducts(tmpProducts);
     }else{
       let tmpProducts = products;
       tmpProducts.push(product);
-      setValue(tmpProducts);
-      //setProducts(prevproducts => [...prevproducts, product]);
+      //setValue(tmpProducts);
+      
+      setProducts(prevproducts => [...prevproducts, product]);
     }
   };
 
   const removeProduct = (productId) => {
-    //setProducts(prevproducts => prevproducts.filter(product => product.id !== productId));
-    setValue(prevproducts => prevproducts.filter(product => product.id !== productId));
+    setProducts(prevproducts => prevproducts.filter(product => product.id !== productId));
+    //setValue(prevproducts => prevproducts.filter(product => product.id !== productId));
   };
 
   const getTotalProducts = () => {
@@ -96,8 +97,8 @@ export const CartProvider = ({ children }) => {
       });
       console.log('changeQuantityCart1 ');
       console.log(tmpProducts);
-      setValue(tmpProducts);
-      //setProducts(tmpProducts);
+      //setValue(tmpProducts);
+      setProducts(tmpProducts);
       console.log('changeQuantityCart2 '+products);
       console.log(products);
   }

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const HomeSliderSlide = () => {
     return(
         <div className="slider-slides-slide">
@@ -7,7 +9,7 @@ const HomeSliderSlide = () => {
                     Yohji Yamamoto<br />
                     Y-3
                 </p>
-                <a href="#" title="Shop Now">Shop Now</a>
+                <Link to="#" title="Shop Now">Shop Now</Link>
             </div>
         </div>
     )

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const  description = (description ) => {
 
     return description ? <p>{description}</p> : '';
@@ -16,12 +17,12 @@ const HomejournalCard = ({card}) => {
     const smallCard = card.cardsmall ? " journal-card-small" : '';
 
     return(
-        <a href="#" title="View Journal" className={"journal-card" + smallCard}>
+        <Link to="#" title="View Journal" className={"journal-card" + smallCard}>
             <p className="fancytext">{card.type}</p>
             <h3>{card.title}</h3>
             {description(card.description)}
             {image(card.image)}
-        </a>
+        </Link>
     )
 }
 

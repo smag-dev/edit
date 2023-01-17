@@ -52,7 +52,7 @@ const Product = () => {
                     <Score score={product.score}/>
                 </div>
                 <div className="col-12 col-t-5 col-d-4 textright">
-                    <a className="graymedium small" href="#" title="Share your thoughts with other customers">Share your thoughts with other customers</a>
+                    <Link className="graymedium small" to="#" title="Share your thoughts with other customers">Share your thoughts with other customers</Link>
                 </div>
                 <div className="col-12 col-t-10 col-d-8 offset-t-1 offset-d-2">
                     <p>Top customer reviews</p>
@@ -64,7 +64,7 @@ const Product = () => {
                         <p>Quisque dignissim neque in odio laoreet sodales. Phasellus gravida facilisis est. Ut nec metus lobortis, euismod felis eget, ornare erat. Nam tincidunt sem elit, a facilisis nibh maximus vitae. Proin suscipit augue mi, id sollicitudin orci lacinia vitae.</p>
                     </div>
                     <div>
-                        <a className="secondary fancytext" href="#">Show more reviews</a>
+                        <Link className="secondary fancytext" to="#">Show more reviews</Link>
                     </div>
                 </div>
             </div>

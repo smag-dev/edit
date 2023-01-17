@@ -1,9 +1,10 @@
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
+import { Link } from "react-router-dom";
 import './Cart.css'
 const Cart = () => {
     const {products, getTotalPriceProduct, getTotalPriceProducts, removeProduct,changeQuantityCart} = useContext(CartContext)
-    console.log(products)
+
     return(
         <section id="cart" className="paddingverticaldouble">
             <h2 className="textcenter marginbottomfull">Cart</h2>
@@ -25,7 +26,7 @@ const Cart = () => {
                         return (
                             
                             <tr key={product.img}>
-                            <td><a href={"/product/"+product.id}><img width="100"  srcSet={product.img}></img></a></td>
+                            <td><Link to={"/product/"+product.id}><img width="100"  srcSet={product.img}></img></Link></td>
                             <td>{product.name}</td>
                             <td><button type="button" className="btnleft" onClick={() => changeQuantityCart(product.id, '-')}>-</button>
                                 <input type="number" value={product.quantity} name="qty" onChange={() => alert('la')}/>
