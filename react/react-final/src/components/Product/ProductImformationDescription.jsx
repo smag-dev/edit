@@ -12,16 +12,18 @@ const ProductInformationDescription = ({product}) => {
     const [quantity, setQuantity] = useState(1);
     const {addProduct} = useContext(CartContext)
 
-    console.log(maxquantity);
-    function changeQuantity(type){
-        console.log(quantity+'ola')
-        if (type == '-' && quantity - 1 > 0){
-            setQuantity(quantity-1);
+    const changeQuantity = (event) => {
+        const { value } = event.target;
+
+        setQuantity(Number(value));
+        if (value < 1){
+            setQuantity(1);
         }
-        if (type == '+' && (quantity + 1 <= maxquantity)){
-            setQuantity(quantity+1);
+        if (value > maxquantity){
+            setQuantity(maxquantity);
         }
     }
+
 
     return(
         <div id="product-description" className="col-12 col-t-7 col-d-6">
@@ -81,9 +83,9 @@ const ProductInformationDescription = ({product}) => {
                     Quantity
                 </div>
                 <div className="col-6 col-d qty">
-                    <button type="button" className="btnleft" onClick={() => changeQuantity('-')}>-</button>
+                    <button type="button" value={quantity -1} className="btnleft" onClick={() => changeQuantity(event)}>-</button>
                     <input type="number" value={quantity} name="qty"/>
-                    <button type="button" className="btnright" onClick={() => changeQuantity('+')}>+</button>
+                    <button type="button" value={quantity +1} className="btnright" onClick={() => changeQuantity(event)}>+</button>
                 </div>
                 <div className="col-6 col-d cart">
                     <button type="button" onClick={() => addProduct({id : product.id, name : product.name, img : product.image, quantity : quantity, price : product.price})}>Add to cart</button>

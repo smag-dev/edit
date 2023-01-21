@@ -17,6 +17,7 @@ const Product = () => {
     let product = JSON.parse(myrequest.response);
     console.log(product);
 
+
     return ( 
         <>
         <ProductBreadcumb name = {product.name}/>

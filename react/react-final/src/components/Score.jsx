@@ -1,4 +1,3 @@
-import { useRef } from "react";
 const stars = [1,2,3,4,5];
 
 const Score = ({score}) => {
@@ -8,7 +7,7 @@ const Score = ({score}) => {
         {
             stars.map((star, index) => {
                 return (
-                    <i key={index} className={index <= (score2-1) ? "icn-star primary" : "icn-star"}></i>
+                    <i key={index} className={star <= (score2) ? "icn-star primary" : "icn-star"}></i>
                 );
             })
         }

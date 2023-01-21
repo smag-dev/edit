@@ -1,9 +1,11 @@
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
+import './Header.css'
 const Header = () =>{
-    const cart = useContext(CartContext);
-
+    const {products} = useContext(CartContext);
+    console.log("header")
+    console.log(products);
     return(
         <header className="bg-white">
             <nav className="gridrow">
@@ -22,7 +24,7 @@ const Header = () =>{
                     <li><Link to="#" title="Login">Login</Link></li>
                     <li><Link to="#" title="Search"><i className="icn-search"></i></Link></li>
                     <li><Link to="#" title="Wishlist"><i className="icn-heart"></i></Link></li>
-                    <li><Link to="/cart" title="Shopping Cart"><i className="icn-shopping-cart">({cart.getTotalProducts()})</i></Link></li>
+                    <li><Link to={products.length>0 ? 'cart' : '#'} title="Shopping Cart"><i className="icn-shopping-cart"></i><span className="cartLength">({products.length})</span></Link></li>
                 </ul>
             </nav>
         </header>
