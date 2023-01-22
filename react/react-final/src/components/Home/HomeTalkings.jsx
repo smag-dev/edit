@@ -11,11 +11,9 @@ const talkings = [{id : "01", alt : "talking 1", classes : "col-4 col-t-2 col-d-
                 ]
 
 const generateTalkings = (talkings) => {
-
     const res = talkings.map((talking) => {
         return(<HomeTalkingsTalking key={talking.id} talking={talking}/>)
     })
-
     return res;
 }
 

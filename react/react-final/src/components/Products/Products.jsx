@@ -1,186 +1,113 @@
 import { Link } from 'react-router-dom';
-import Product from '../Product'
+import Product from '../ProductCard'
+import ProductsCategories from './ProductsCategories';
+import ProductsSizes from './ProductsSizes'
+import ProductsSort from './ProductsSort';
 import { useEffect, useState } from 'react'
 
-//verifica se o produto possui algum valor para o filtro aplicado
-function inArray(needle, haystack) {
-    const length = haystack.length;
-    for(let i = 0; i < length; i++) {
-        if(haystack[i] == needle) return true;
-    }
-    return false;
+/* filtra os produtos por categoria */
+function filterProductsByCategory(products, id){
+    return  products.filter((product) => product.category.includes(Number(id)))
 }
 
-//filtra os produtos por categoria ou tamanho
-function filterProducts(products, id, type){
-    const res = [];
-    const length = products.length;
-    for(let i = 0; i < length; i++) {
-        let elementsToCompare = type == 'category' ?  products[i].category : Object.keys(products[i].sizes);
-        if(inArray(id, elementsToCompare)) res.push(products[i]);
-    }
-    return res;
+/* filtra os produtos por  tamanho */
+function filterProductsBySize(products, id){
+    return products.filter((product) => Object.keys(product.sizes).includes(id))
 }
 
-//verifica se há algum filtro para filtrar
-function generateProductsFiltered(products, filtro)  {
+/* verifica se há algum filtro para filtrar */
+function getProductsFiltered(products, filtro)  {
     const filtered = filtro.split('-')
-    let res = [];
     const type =  filtered[0];
     const id = type ? filtered[1] : '';
-    res = type ? filterProducts(products, id, type) : products;
-    return res;
+    switch(type) {
+        case 'category':
+            products = filterProductsByCategory(products, id)
+          break;
+        case 'size':
+            products = filterProductsBySize(products, id)
+          break;
+      }
+    return products;
 }
 
-//renderiza os produtos
-function generateRender(products)  {
+/* renderiza os produtos */
+function getProductsRendered(products)  {
     const res = products.map((product) => {
         return(<Product key={product.id} type="productlist" product={product}/>)
     })
-
     return res;
+}
+
+/* obter produtos ordenados */
+function getProductOrdered(products, order){
+    switch(order) {
+        case 'price':
+            products.sort((p1, p2) => (p1.price < p2.price) ? -1 : (p1.price > p2.price) ? 1 : 0);
+          break;
+        case 'name':
+            products.sort((p1, p2) => (p1.name < p2.name) ? -1 : (p1.name > p2.name) ? 1 : 0);
+          break;
+        case 'popularity':
+        products.sort((p1, p2) => (p1.score < p2.score) ? 1 : (p1.score > p2.score) ? -1 : 0);
+        break;
+    }
+    return products;
 }
 
 
 const Products = () => {
-    //hook que guarda o filtro, categoria e seu valor ou tamanho e seu valor
+    /* hook que guarda o filtro, categoria e seu valor ou tamanho e seu valor */
     const [filter, setFilter] = useState('')
-    //hook que guarda a renderizacao
-    const [filterrender, setFilterrender] = useState('');
-
+    /* hook que guarda a renderizacao */
+    const [productsrendered, setProductsrendered] = useState('');
+    /* hook que guarda o tipo de ordenação */
     const [order, setOrder] = useState('price');
-
+    /* atualizar a ordenação */
+    const handleChangeOrder = (event) => {
+        const value  = event.target.value;
+        setOrder(value)
+    }
+    /* useEfect  para obter dados do endpoint*/
     useEffect(()=> {
         fetch("https://foxcoding.net/api/getProductsList")
         .then (function(response){
             return response.json();
         })
         .then((data)=>{
-            const products = generateProductsFiltered(data.data.products, filter);
-            switch(order) {
-                case 'price':
-                    products.sort((p1, p2) => (p1.price < p2.price) ? -1 : (p1.price > p2.price) ? 1 : 0);
-                  break;
-                case 'name':
-                    products.sort((p1, p2) => (p1.name < p2.name) ? -1 : (p1.name > p2.name) ? 1 : 0);
-                  break;
-                case 'popularity':
-                products.sort((p1, p2) => (p1.score < p2.score) ? 1 : (p1.score > p2.score) ? -1 : 0);
-                break;
-            }
-
-            setFilterrender(generateRender(products));
+            let products = getProductsFiltered(data.data.products, filter);
+            products = getProductOrdered(products, order)
+            setProductsrendered(getProductsRendered(products));
         })
         .catch(()=>{
             console.log('erro');
         });
     },[filter, order])
-
-
-
-    const handleChangeOrder = (event) => {
-        const value  = event.target.value;
-        setOrder(value)
-    }
-
+    
     return ( 
-            <>
-            <div id="headerproductlist">
-                <div className="textoverlay">
-                    <h1>Tops</h1>
-                    <p>These awesome products</p>
+        <>
+        <div id="headerproductlist">
+            <div className="textoverlay">
+                <h1>Tops</h1>
+                <p>These awesome products</p>
+            </div>
+        </div>
+        <ProductsSort handleChangeOrder={handleChangeOrder} order = {order}/>
+        <div className="gridrow">
+            <div id="filters" className="col-12 col-t-4 col-d-3">
+                <p className="fancytext" onClick={() => setFilter('')}>Clear Filters</p>
+                <p className="fancytext">Filters</p>
+                <ProductsCategories setFilter = {setFilter} />
+                <ProductsSizes setFilter = {setFilter}/>
+            </div>
+            <div id="mainproductlist" className="product-list col-12 col-t-8 col-d-9 gridrowfull">
+                { productsrendered }
+                <div className="central-link-light marginbottomdouble">
+                    <Link to="#" title="Load More"><i className="icn-reload"></i> Load More</Link>
                 </div>
             </div>
-            <div id="sortbar">
-                <div className="gridrow">
-                    <div className="col-4">Tops</div>
-                    <div className="col-8 textright">Sort by
-                        <select onChange={handleChangeOrder} value={order}>
-                            <option value="price" >Price</option>
-                            <option value="popularity">Popularity</option>
-                            <option value="name">Name</option>
-                            <option value="season">Season</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div className="gridrow">
-                <div id="filters" className="col-12 col-t-4 col-d-3">
-                    <p className="fancytext" onClick={() => setFilter('')}>Clear Filters</p>
-                    <p className="fancytext">Filters</p>
-                    <ul className="categories">
-                        <li className="open">
-                            <Link to="#" title="Tops">
-                                Tops 
-                                <i className="icn-chevron-down"></i>
-                                <i className="icn-chevron-up"></i>
-                            </Link>
-                            <ul>
-                                {/*<li><a href="#" title="Jackets"><i className="icn-chevron-right"></i> Jackets</a></li>
-                                <li><a href="#" title="Sweaters"><i className="icn-chevron-right"></i> Sweaters</a></li>
-                                <li><a href="#" title="Shirts"><i className="icn-chevron-right"></i> Shirts</a></li>
-                                <li><a href="#" title="Tees"><i className="icn-chevron-right"></i> Tees</a></li>
-                                <li><a href="#" title="Polos"><i className="icn-chevron-right"></i> Polos</a></li>*/}
-                                <li><a title="Coats" onClick={() => setFilter('category-2')}><i className="icn-chevron-right"></i> Coats</a></li>
-                            </ul>
-                        </li>
-                        <li className="open">
-                            <Link to="#" title="Bottoms">
-                                Bottoms
-                                <i className="icn-chevron-down"></i>
-                                <i className="icn-chevron-up"></i>
-                            </Link>
-                            <ul>
-                                {/*<li><a href="#" title="Shorts"><i className="icn-chevron-right"></i> Shorts</a></li>
-                                <li><a href="#" title="Trousers"><i className="icn-chevron-right"></i> Trousers</a></li>
-                                <li><a href="#" title="Skirts"><i className="icn-chevron-right"></i> Skirts</a></li>*/}
-                                <li><a  title="Pants" onClick={() => setFilter('category-3')}><i className="icn-chevron-right"></i> Pants</a></li>
-                            </ul>
-                        </li>
-                        <li className="open">
-                            <Link to="#" title="Bags">
-                                Bags
-                                <i className="icn-chevron-down"></i>
-                                <i className="icn-chevron-up"></i>
-                            </Link>
-                            <ul>
-                                {/*<li><a href="#" title="Travel"><i className="icn-chevron-right"></i> Travel</a></li>
-                                <li><a href="#" title="Work"><i className="icn-chevron-right"></i> Work</a></li>*/}
-                                <li><a  title="Jackets" onClick={() => setFilter('category-4')}><i className="icn-chevron-right"></i> Jackets</a></li>
-                            </ul>
-                        </li>
-                        <li className="open">
-                            <Link to="#" title="Bags">
-                                Shoes
-                                <i className="icn-chevron-down"></i>
-                                <i className="icn-chevron-up"></i>
-                            </Link>
-                            <ul>
-                                <li><a  title="Sneakers" onClick={() => setFilter('category-1')}><i className="icn-chevron-right"></i> Sneakers</a></li>
-                                {/*<li><a href="#" title="Boots"><i className="icn-chevron-right"></i> Boots</a></li>
-                                <li><a href="#" title="Flip-flops"><i className="icn-chevron-right"></i> Flip-flops</a></li>*/}
-                            </ul>
-                        </li>
-                    </ul>
-                    <div className="sizes">
-                        <p className="fancytext">- Sizes</p>
-                        <div className="sizebtns marginverticalfourth">
-                            <button type="button" onClick={() => setFilter('sizes-1')}>1</button>
-                            <button type="button" onClick={() => setFilter('sizes-2')}>2</button>
-                            <button type="button" onClick={() => setFilter('sizes-3')}>3</button>
-                            <button type="button" onClick={() => setFilter('sizes-4')}>4</button>
-                        </div>
-                        <Link to="#" title="View Size Guide" className="fancytext">See our sizing guide</Link>
-                    </div>
-                </div>
-                <div id="mainproductlist" className="product-list col-12 col-t-8 col-d-9 gridrowfull">
-                    {filterrender}
-                    <div className="central-link-light marginbottomdouble">
-                        <Link to="#" title="Load More"><i className="icn-reload"></i> Load More</Link>
-                    </div>
-                </div>
-            </div>
-            </>
+        </div>
+        </>
     )
 }
  

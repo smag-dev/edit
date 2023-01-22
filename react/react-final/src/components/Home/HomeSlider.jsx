@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom"
 import HomeSliderSlide from "./HomeSliderSlide"
 
-
 const HomeSlider = () => {
     return(
         <section className="slider">

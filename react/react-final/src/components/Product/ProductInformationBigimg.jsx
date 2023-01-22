@@ -1,4 +1,5 @@
 import Social from "../Social"
+
 const ProductInformationBigimg = ({image, id_image}) => {
     return(
         <div id="bigimg" className="col-9 col-t-4 col-d-5">

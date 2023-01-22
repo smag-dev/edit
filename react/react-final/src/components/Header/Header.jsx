@@ -2,10 +2,9 @@ import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import './Header.css'
+
 const Header = () =>{
     const {products} = useContext(CartContext);
-    console.log("header")
-    console.log(products);
     return(
         <header className="bg-white">
             <nav className="gridrow">

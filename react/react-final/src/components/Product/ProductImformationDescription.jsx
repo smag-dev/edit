@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
 import ProductInformationProductcare from "./ProductInformationProductcare"
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../../context/CartContext"
 import Score from "../Score"
 import Sizes from "../Sizes"
-import { useState } from "react"
 
 const ProductInformationDescription = ({product}) => {
     const sizeKeys = Object.keys(product.sizes);
@@ -23,7 +22,6 @@ const ProductInformationDescription = ({product}) => {
             setQuantity(maxquantity);
         }
     }
-
 
     return(
         <div id="product-description" className="col-12 col-t-7 col-d-6">

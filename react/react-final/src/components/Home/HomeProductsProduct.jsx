@@ -1,14 +1,11 @@
 import { Link } from "react-router-dom"
 
 function IsNew({New }) {
-
     if (New) {
         return <span className="product-card-image-badge">New!</span>
     }
-
     return ''
 }
-
 
 const HomeProductsProduct = ({product}) => {
     return(

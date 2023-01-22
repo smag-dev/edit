@@ -1,5 +1,4 @@
-import HomeProductsProduct from "./HomeProductsProduct"
-import Product from "../Product"
+import ProductCard from "../ProductCard"
 
 const products = [{id : "01", name : "Black and purple Ren Sneakers", category : "Shoes", price : "123.00", new : true},
                   {id : "02", name : "Black and white Kaiwa Sneakers", category : "Shoes", price : "213.00", new : false},
@@ -12,16 +11,13 @@ const products = [{id : "01", name : "Black and purple Ren Sneakers", category :
                 ]
 
 const generateProducts = (products) => {
-
     const res = products.map((product) => {
-        return(<Product key={product.id} type="home" product={product}/>)
+        return(<ProductCard key={product.id} type="home" product={product}/>)
     })
-
     return res;
 }
 
 const HomeProducts = () => {
-
     return(
         <section id="products" className="product-list bg-graylight paddingtopdouble paddingbottomfull">
             <h1 className="textcenter">Top Products</h1>

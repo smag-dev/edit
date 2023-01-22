@@ -7,14 +7,11 @@ const presses = [ {id : "01", description : "Replica Collection", link : "https:
                 ]
 
 const generatePresses= (presses) => {
-
     const res = presses.map((press) => {
         return(<HomePressImg key={press.id} press={press}/>)
     })
-
     return res;
 }
-
 
 const HomePress = () => {
     return(

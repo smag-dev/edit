@@ -8,16 +8,13 @@ const categories = {
 }
 
 function isNew(productNew ) {
-
     if (productNew) {
         return <span className="product-card-image-badge">New!</span>
     }
-
     return ''
 }
 
-
-const Product = ({type, product}) => {
+const ProductCard = ({type, product}) => {
     let category = product.category;
     let id = product.id;
     let addClass = "";
@@ -28,12 +25,18 @@ const Product = ({type, product}) => {
         id = product.id < 10 ? '0'+product.id : product.id;
         addClass = "col-6 col-d-4"
         img = product.image;
-        category = categories[product.category[0]];
+        const productCategories = product.category;
+        category = '';
+        for (let i=0; i < productCategories.length; i++)  {
+            category += categories[productCategories[i]]+' ';
+        }
+        category.trim()
     } else {
         addClass = "col-6 col-t-3"
     }
 
     const productNew = product.new ? product.new : false;
+    
     return(
         <Link className={"product-card "+addClass} to={"/product/"+product.id} title="View Product">
             <div className="product-card-image">
@@ -47,4 +50,4 @@ const Product = ({type, product}) => {
     )
 }
 
-export default Product
+export default ProductCard

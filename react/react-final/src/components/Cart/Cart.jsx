@@ -42,19 +42,17 @@ const Cart = () => {
             <h2 className="textcenter marginbottomfull">Cart</h2>
             <div className="gridrow">
                 <div className="col-12">
-
                     <div className="container">
-                    <div className="width-10">Image</div>
-                    <div className="width-50">Name</div>
-                    <div className="width-10 quantity">Quantity</div>
-                    <div className="width-10">Price</div>
-                    <div className="width-10">Total Price</div>
-                    <div className="width-10">Delete</div>
+                        <div className="width-10">Image</div>
+                        <div className="width-50">Name</div>
+                        <div className="width-10 quantity">Quantity</div>
+                        <div className="width-10">Price</div>
+                        <div className="width-10">Total Price</div>
+                        <div className="width-10">Delete</div>
                     </div>
 
                     {products.map((product) =>{
                         return (
-
                             <div key={product.id} className="container">
                                 <div className="width-10"><Link to={"/product/"+product.id}><img width="100"  srcSet={product.img}></img></Link></div>
                                 <div className="width-50">{product.name}</div>
@@ -69,8 +67,7 @@ const Cart = () => {
                             
                         )
                     })}
-                     <div className="container-footer"><div className="width-80"></div><div className="totalProducts">Total Products:</div><div className="width-10">{getTotalPriceProducts().toFixed(2)}€</div></div>
-
+                    <div className="container-footer"><div className="width-80"></div><div className="totalProducts">Total Products:</div><div className="width-10">{getTotalPriceProducts().toFixed(2)}€</div></div>
                 </div>
             </div>
         </section>
