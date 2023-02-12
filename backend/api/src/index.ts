@@ -1,6 +1,6 @@
 import express from "express";
 import dotenv from 'dotenv';
-import { Request, Response } from "express";
+import productRouter from "./Router/productRouter";
 
 dotenv.config();
 const PORT = process.env.PORT || 3000;
@@ -21,30 +21,4 @@ const startApp = async () => {
 
 startApp();
 
-const appRouter = express.Router();
-
-appRouter.get('/products', (req : Request, res : Response) => {
-    console.log("primeiro pedido get products");
-    console.log(req.query)
-    res.status(200).json('primeiro pedido get products')
-})
-
-appRouter.post('/products', (req : Request, res : Response) => {
-    console.log("primeiro pedido post products");
-    console.log(req.query)
-    res.status(200).json('primeiro pedido post products')
-})
-
-appRouter.put('/products/', (req : Request, res : Response) => {
-    console.log("primeiro pedido put products");
-    console.log(req.query)
-    res.status(200).json('primeiro pedido put products')
-})
-
-appRouter.delete('/products/', (req : Request, res : Response) => {
-    console.log("primeiro pedido delete products");
-    console.log(req.query)
-    res.status(200).json('primeiro pedido delete products')
-})
-
-app.use(appRouter);
+app.use(productRouter);
