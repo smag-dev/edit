@@ -21,26 +21,30 @@ const startApp = async () => {
 
 startApp();
 
-app.get('/products', (req : Request, res : Response) => {
+const appRouter = express.Router();
+
+appRouter.get('/products', (req : Request, res : Response) => {
     console.log("primeiro pedido get products");
     console.log(req.query)
     res.status(200).json('primeiro pedido get products')
 })
 
-app.post('/products', (req : Request, res : Response) => {
+appRouter.post('/products', (req : Request, res : Response) => {
     console.log("primeiro pedido post products");
     console.log(req.query)
     res.status(200).json('primeiro pedido post products')
 })
 
-app.put('/products/', (req : Request, res : Response) => {
+appRouter.put('/products/', (req : Request, res : Response) => {
     console.log("primeiro pedido put products");
     console.log(req.query)
     res.status(200).json('primeiro pedido put products')
 })
 
-app.delete('/products/', (req : Request, res : Response) => {
+appRouter.delete('/products/', (req : Request, res : Response) => {
     console.log("primeiro pedido delete products");
     console.log(req.query)
     res.status(200).json('primeiro pedido delete products')
 })
+
+app.use(appRouter);
