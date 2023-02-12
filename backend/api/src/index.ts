@@ -1,6 +1,6 @@
 import express from "express";
 import dotenv from 'dotenv';
-import productRouter from "./Router/productRouter";
+import productRouter from "./routers/productRouter";
 
 dotenv.config();
 const PORT = process.env.PORT || 3000;
