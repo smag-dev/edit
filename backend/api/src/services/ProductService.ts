@@ -1,29 +1,39 @@
+import ProductModel from "../model/ProductModel";
+
 class ProductService {
-  create(product: any) {
+  async create(product: any) {
     console.log(product);
     console.log(' create ProductService')
+    const createdProduct = await ProductModel.create(product);
     return product;
   }
-  getAll() {
-    const products = {id:1}
+  async getAll() {
     console.log(' getAll ProductService')
+    const products = await ProductModel.find();
     return products;
   }
-  getOne(id: string) {
+  async getOne(id: string) {
     console.log(' getOne ProductService')
     console.log(id)
-    return id;
+    const product = await ProductModel.findById(id);
+    return product;
   }
-  update(id: string, product: any) {
+  async update(id: string, product: any) {
     console.log(' update ProductService')
     console.log(id)
     console.log(product)
+    let productObj = {...product, updatedAt: Date.now()};
+    console.log(productObj)
+    const updatedProduct = await ProductModel.findByIdAndUpdate(id, productObj, {
+        new: true,
+      })
     return product;
   }
-  delete(id: string) {
+  async delete(id: string) {
     console.log(' delete ProductService')
     console.log(id)
-    return id;
+    const deletedProduct = await ProductModel.findByIdAndDelete(id);
+    return deletedProduct;
   }
     
 }
