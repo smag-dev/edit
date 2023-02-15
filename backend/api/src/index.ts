@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from 'dotenv';
 import productRouter from "./routers/productRouter";
+import userRouter from "./routers/userRouter";
 import mongoose from "mongoose";
 
 dotenv.config();
@@ -27,3 +28,4 @@ const startApp = async () => {
 startApp();
 
 app.use(productRouter);
+app.use(userRouter);
