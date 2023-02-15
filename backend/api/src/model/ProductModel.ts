@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import {IProduct} from "../interfaces/ProductInterface"
 
 const ProductSchema = new mongoose.Schema({
   name: { type: String, required: true },
@@ -11,4 +10,13 @@ const ProductSchema = new mongoose.Schema({
   updatedAt: { type: Date, required: true, default: Date.now() },
 });
 
-export default mongoose.model<IProduct>("Product", ProductSchema);
+/* tinha num ficheiro à parte mas como foi falado na aula, não faz sentido colocar  num ficheiro à parte */
+interface Product extends mongoose.Document {
+  name: string;
+  description: string;
+  price: number;
+  category: string;
+  quantity: number;
+}
+
+export default mongoose.model<Product>("Product", ProductSchema);
