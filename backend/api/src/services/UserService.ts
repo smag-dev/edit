@@ -1,25 +1,32 @@
-//import UserModel from "../model/ProductModel";
+import UserModel from "../model/UserModel";
 
 class UserService {
   async create(user: any) {
     console.log(user);
-    console.log(' create ProductService')
-    return user;
+    const newUser = await UserModel.create(user);
+    return newUser;
   }
 
   async login(user:any) {
-    console.log(' login UserService')
-    return user;
+    const {email,password} = user;
+    const login =  await UserModel.find({email : email});
+    let newUser = {...user, lastLogin: Date.now()};
+    if (login){
+        console.log('entrou')
+        newUser = await UserModel.findOneAndUpdate({email : email}, newUser);
+        console.log(newUser)
+    }
+    return newUser;
   }
 
   async getAll() {
-    console.log(' getAll UserService')
-    return [{email:"teste@teste.com", password:"password"},{email:"teste@teste.com2", password:"password2"} ];
+    const users = await UserModel.find()
+    return users;
   }
-  
+
   async getOne(id: string) {
-    console.log(' getOne UserService')
-    return {email:"teste@teste.com", password:"password"};
+    const user = await UserModel.findById(id)
+    return user;
   }
 }
 

@@ -16,7 +16,7 @@ class UserController {
     /* login do user   */
     async login(req : Request, res : Response) {
         try {
-            const user = await UserService.create(req.body)
+            const user = await UserService.login(req.body)
             res.status(200).json(user);
         } catch (error) {
             res.status(500).send({ message: "Falhou o login.", error })
