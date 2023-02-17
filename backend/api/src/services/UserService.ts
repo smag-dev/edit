@@ -1,22 +1,43 @@
 import UserModel from "../model/UserModel";
+import bcrypt from "bcrypt"
 
 class UserService {
   async create(user: any) {
-    console.log(user);
-    const newUser = await UserModel.create(user);
-    return newUser;
+    const{email, password} = user;
+    /* validar se a conta exise */
+    const existUser =  await UserModel.findOne({email : email});
+    if (existUser) {
+      throw new Error("User já existe.");
+    }
+
+    /* encriptar password */
+    const passwordencrypted = await bcrypt.hash(password, 7);
+    /* contruir new user mas com password encriptada*/
+    const newUser = { email, password: passwordencrypted };
+    console.log(newUser);
+    const newUserDb = await UserModel.create(newUser);
+    return newUserDb;
   }
 
   async login(user:any) {
     const {email,password} = user;
-    const login =  await UserModel.find({email : email});
-    let newUser = {...user, lastLogin: Date.now()};
-    if (login){
-        console.log('entrou')
-        newUser = await UserModel.findOneAndUpdate({email : email}, newUser);
-        console.log(newUser)
+    /*validar se a conta existe*/
+    const existUser =  await UserModel.findOne({email : email});
+    if (!existUser) {
+      throw new Error("User não existe.");
     }
-    return newUser;
+    /* verificar se a password é valida */
+    const validPassword = bcrypt.compareSync(password, existUser.password);
+    if (!validPassword) {
+      throw new Error("Password invalida.");
+    }
+    console.log('entrou')
+    const passwordencrypted = await bcrypt.hash(password, 7);
+    /* entrou então atualizar o campo lastLogin */
+    let newUser = await UserModel.findOneAndUpdate({email : email}, {lastLogin: Date.now()});
+    console.log(newUser)
+
+    return existUser;
   }
 
   async getAll() {
