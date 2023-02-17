@@ -1,5 +1,6 @@
 import UserModel from "../model/UserModel";
 import bcrypt from "bcrypt"
+import TokenService from "./TokenService";
 
 class UserService {
   async create(user: any) {
@@ -14,9 +15,11 @@ class UserService {
     const passwordencrypted = await bcrypt.hash(password, 7);
     /* contruir new user mas com password encriptada*/
     const newUser = { email, password: passwordencrypted };
-    console.log(newUser);
     const newUserDb = await UserModel.create(newUser);
-    return newUserDb;
+    console.log('antes tokem')
+    /* gerar o token para o caso de ao registar entrar logo na conta */
+    const token = TokenService.generateToken(newUser)
+    return { ...token, newUser };
   }
 
   async login(user:any) {
@@ -37,7 +40,9 @@ class UserService {
     let newUser = await UserModel.findOneAndUpdate({email : email}, {lastLogin: Date.now()});
     console.log(newUser)
 
-    return existUser;
+    const tokens = TokenService.generateToken(existUser)
+    console.log()
+    return { ...tokens, existUser };
   }
 
   async getAll() {
