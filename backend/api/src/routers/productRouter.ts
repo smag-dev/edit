@@ -14,7 +14,7 @@ router.post(
     check("price", "o preço precisa de ser um número").isNumeric(),
     check("quantity", "a quantidade precisa de ser um número").isNumeric(),
   ],
-  authMiddleware,
+  /*authMiddleware,*/
   ProductController.create
 );
 
@@ -31,7 +31,7 @@ router.put(
     check("price", "o preço precisa de ser um número").isNumeric(),
     check("quantity", "a quantidade precisa de ser um número").isNumeric(),
   ],
-  authMiddleware,
+  /*authMiddleware,*/
   ProductController.update
 );
 

@@ -10,7 +10,9 @@ class ProductController {
       if (!errors.isEmpty()) {
         res.status(400).json({ "Validation errors.": errors.array() });
       } else {
-        const product = await ProductService.create(req.body);
+        /* verifica se existe ficheiro/imagem com um ternario passando null caso não exista*/
+        const image = req.files?.image;
+        const product = await ProductService.create(req.body, image);
         res.status(201).json(product);
       }
     } catch (error: unknown) {
@@ -55,7 +57,9 @@ class ProductController {
   async update(req: Request, res: Response) {
     try {
       const { id } = req.params;
-      const product = await ProductService.update(id, req.body);
+      /* verifica se existe ficheiro/imagem com um ternario passando null caso não exista*/
+      const image = req.files?.image;
+      const product = await ProductService.update(id, req.body, image);
       res.status(200).json(product);
     } catch (error: unknown) {
       if (error instanceof Error) {

@@ -6,6 +6,7 @@ const ProductSchema = new mongoose.Schema({
   price: { type: Number, required: true },
   category: { type: String, required: true },
   quantity: { type: Number, required: true },
+  image: { type: String, default: "no-image.png" },
   createdAt: { type: Date, required: true, default: Date.now() },
   updatedAt: { type: Date, required: true, default: Date.now() },
 });
@@ -17,6 +18,7 @@ interface Product extends mongoose.Document {
   price: number;
   category: string;
   quantity: number;
+  image: string;
 }
 
 export default mongoose.model<Product>("Product", ProductSchema);

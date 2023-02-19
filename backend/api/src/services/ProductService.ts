@@ -1,9 +1,18 @@
 import ProductModel from "../model/ProductModel";
+import FileService from "./FileService";
 
 class ProductService {
-  async create(product: any) {
+  async create(product: any, image: any) {
     console.log(product);
     console.log(" create ProductService");
+    /*verifica se existe ficheiro de imagem */
+    if (image) {
+      /* constroi o objecto pois acima  só chamei o ficheiro*/
+      const fileservice = new FileService();
+      /*grava a imagem */
+      const fileName = fileservice.save(image);
+      product = { ...product, image: fileName };
+    }
     const createdProduct = await ProductModel.create(product);
     return createdProduct;
   }
@@ -18,10 +27,16 @@ class ProductService {
     const product = await ProductModel.findById(id);
     return product;
   }
-  async update(id: string, product: any) {
+  async update(id: string, product: any, image: any) {
     console.log(" update ProductService");
-    console.log(id);
-    console.log(product);
+    /*verifica se existe ficheiro de imagem */
+    if (image) {
+      /* constroi o objecto pois acima  só chamei o ficheiro*/
+      const fileservice = new FileService();
+      /*grava a imagem */
+      const fileName = fileservice.save(image);
+      product = { ...product, image: fileName };
+    }
     let productObj = { ...product, updatedAt: Date.now() };
     console.log(productObj);
     const updatedProduct = await ProductModel.findByIdAndUpdate(
