@@ -5,6 +5,7 @@ import { check } from "express-validator";
 
 const router = Router();
 
+/*rota para criar produto*/
 router.post(
   "/products",
   [
@@ -14,14 +15,17 @@ router.post(
     check("price", "o preço precisa de ser um número").isNumeric(),
     check("quantity", "a quantidade precisa de ser um número").isNumeric(),
   ],
-  /*authMiddleware,*/
+  authMiddleware,
   ProductController.create
 );
 
+/*rota para obter produtos*/
 router.get("/products", ProductController.getAll);
 
+/*rota para obter um produto*/
 router.get("/products/:id", ProductController.getOne);
 
+/*rota para atualizar produto*/
 router.put(
   "/products/:id",
   [
@@ -35,6 +39,7 @@ router.put(
   ProductController.update
 );
 
+/*rota para apagar produto*/
 router.delete("/products/:id", authMiddleware, ProductController.delete);
 
 export default router;

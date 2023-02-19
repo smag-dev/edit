@@ -5,9 +5,7 @@ import { check } from "express-validator";
 
 const router = Router();
 
-/* rotas para os users */
 /* rota para user registar */
-
 router.post(
   "/users/register",
   [
@@ -32,7 +30,7 @@ router.post(
   UserController.login
 );
 /* rota para obter users */
-router.get("/users/", UserController.getAll);
+router.get("/users/", authMiddleware, UserController.getAll);
 
 /* rota para obter um user  */
 router.get("/users/:id", authMiddleware, UserController.getOne);
