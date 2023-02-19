@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
+import ApiError from "../exceptions/ApiError";
 
 dotenv.config();
 
@@ -17,12 +18,22 @@ export default (req: Request, res: Response, next: NextFunction) => {
   const authHeader = req.headers.authorization;
   console.log(authHeader);
   if (!authHeader) {
-    return res.status(401).json({ message: "Nenhum header de autorização" });
+    //return res.status(401).json({ message: "Nenhum header de autorização" });
+    return next(
+      ApiError.UnauthorizedError("Nenhum header de autorização", [
+        "Nenhum header de autorização",
+      ])
+    );
   }
   /* header contituido por "Bearer token" */
   const token = authHeader.split(" ")[1];
   if (!token) {
-    return res.status(401).json({ message: "Token com formato incorreto" });
+    /*return res.status(401).json({ message: "Token com formato incorreto" });*/
+    return next(
+      ApiError.UnauthorizedError("Token com formato incorreto", [
+        "Token com formato incorreto",
+      ])
+    );
   }
 
   /* verifica se o token é válido dando erro caso seja inválido */
@@ -35,6 +46,7 @@ export default (req: Request, res: Response, next: NextFunction) => {
     next();
   } catch (e) {
     console.error(e);
-    return res.status(401).json({ message: "token inválido" });
+    /*return res.status(401).json({"token inválido" });*/
+    next(ApiError.UnauthorizedError("token inválido", ["token inválido"]));
   }
 };

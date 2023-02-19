@@ -4,6 +4,7 @@ import productRouter from "./routers/productRouter";
 import userRouter from "./routers/userRouter";
 import mongoose from "mongoose";
 import fileUpload from "express-fileupload";
+import errorMiddleware from "./middlewares/errorMiddleware";
 
 dotenv.config();
 const PORT = process.env.PORT || 3000;
@@ -33,3 +34,4 @@ startApp();
 
 app.use(productRouter);
 app.use(userRouter);
+app.use(errorMiddleware);

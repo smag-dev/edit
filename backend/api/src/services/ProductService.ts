@@ -3,6 +3,7 @@ import FileService from "./FileService";
 
 class ProductService {
   async create(product: any, image: any) {
+    throw new Error("teste");
     console.log(product);
     console.log(" create ProductService");
     /*verifica se existe ficheiro de imagem */
