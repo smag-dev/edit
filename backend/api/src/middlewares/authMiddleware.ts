@@ -16,7 +16,6 @@ export default (req: Request, res: Response, next: NextFunction) => {
 
   /* vai buscar o header de autorização */
   const authHeader = req.headers.authorization;
-  console.log(authHeader);
   if (!authHeader) {
     //return res.status(401).json({ message: "Nenhum header de autorização" });
     return next(
@@ -42,11 +41,11 @@ export default (req: Request, res: Response, next: NextFunction) => {
       token,
       String(process.env.JWT_ACCESS_SECRET_KEY)
     ) as TokenPayload;
-    console.log(decoded);
     next();
-  } catch (e) {
-    console.error(e);
+  } catch (error) {
     /*return res.status(401).json({"token inválido" });*/
-    next(ApiError.UnauthorizedError("token inválido", ["token inválido"]));
+    if (error instanceof Error) {
+      next(ApiError.UnauthorizedError("token inválido", [{ error }]));
+    }
   }
 };

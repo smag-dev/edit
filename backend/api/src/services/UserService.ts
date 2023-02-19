@@ -2,8 +2,13 @@ import UserModel from "../model/UserModel";
 import bcrypt from "bcrypt";
 import TokenService from "./TokenService";
 
+interface IUserData {
+  email: string;
+  password: string;
+}
+
 class UserService {
-  async create(user: any) {
+  async create(user: IUserData) {
     const { email, password } = user;
     /* validar se a conta exise */
     const existUser = await UserModel.findOne({ email: email });
@@ -16,13 +21,12 @@ class UserService {
     /* contruir new user mas com password encriptada*/
     const newUser = { email, password: passwordencrypted };
     const newUserDb = await UserModel.create(newUser);
-    console.log("antes tokem");
     /* gerar o token para o caso de ao registar, entrar logo na conta */
-    const token = TokenService.generateToken(newUser);
-    return { ...token, newUser };
+    const token = TokenService.generateToken(newUserDb);
+    return { ...token, newUserDb };
   }
 
-  async login(user: any) {
+  async login(user: IUserData) {
     const { email, password } = user;
     /*validar se a conta existe*/
     const existUser = await UserModel.findOne({ email });
@@ -36,7 +40,6 @@ class UserService {
     if (!validPassword) {
       throw new Error("Password invalida.");
     }
-    console.log("entrou");
     const passwordencrypted = await bcrypt.hash(password, 7);
     /* entrou então atualizar o campo lastLogin */
     let newUser = await UserModel.findOneAndUpdate(
